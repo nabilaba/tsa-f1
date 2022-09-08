@@ -35,7 +35,7 @@ const BlogList = () => {
           marginBottom={5}
           _placeholder={{ color: "gray.300" }}
           value={filter}
-          placeholder="Search for a blog..."
+          placeholder="Search for a post..."
           onChange={({ target }) => setFilter(target.value)}
           size="lg"
           variant="filled"

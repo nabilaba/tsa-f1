@@ -56,7 +56,14 @@ const mdComponents = {
     <Heading as="h6" size="xs" mt={12} {...props} scrollMarginTop="100px" />
   ),
   p: (props: ComponentProps) => (
-    <Text as="p" marginY={5} fontSize="xl" {...props} scrollMarginTop="100px" />
+    <Text
+      as="p"
+      marginY={2}
+      fontSize="xl"
+      {...props}
+      scrollMarginTop="100px"
+      textAlign="justify"
+    />
   ),
   a: (props: ComponentProps) => (
     <Link
@@ -75,16 +82,10 @@ const mdComponents = {
   pre: (props: ComponentProps) => <Box as="pre" {...props} p={2} my={8} />,
   code: (props: ComponentProps) => <Code {...props} bgColor="transparent" />,
   ul: (props: ComponentProps) => (
-    <List stylePosition="inside" styleType="square" fontSize="xl" {...props} />
+    <List ml={6} as="ul" styleType="circle" fontSize="xl" {...props} />
   ),
   ol: (props: ComponentProps) => (
-    <List
-      stylePosition="inside"
-      as="ol"
-      styleType="decimal"
-      fontSize="xl"
-      {...props}
-    />
+    <List ml={6} as="ol" styleType="decimal" fontSize="xl" {...props} />
   ),
   li: (props: ComponentProps) => <ListItem {...props} />,
   hr: (props: ComponentProps) => <Divider my={8} {...props} />,

@@ -35,12 +35,13 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
       <Seo title={title} />
       <Box>
         <BlogContainer ref={target}>
-          <Flex direction="column" maxW={{ base: "90vw", lg: "70vw" }}>
+          <Flex direction="column">
             <SectionHeading marginBottom={0}>{title}</SectionHeading>
 
             <Flex
               justifyContent="space-evenly"
               color="gray.300"
+              my="5"
             >
               <Flex alignItems="center">
                 <Icon as={HiCalendar} marginRight={2} />
