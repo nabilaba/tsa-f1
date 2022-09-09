@@ -63,6 +63,10 @@ const BlogList = () => {
                 </Text>
               </LinkBox>
             ))}
+
+          {blogsToShow && blogsToShow.length === 0 && (
+            <Text color="gray.300">No posts found</Text>
+          )}
         </Flex>
       </HomeContainer>
     </Layout>

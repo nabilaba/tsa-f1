@@ -41,6 +41,8 @@ const DesktopTOC = ({ headings }: { headings: BlogPostHeading[] }) => (
     right="0"
     padding={3}
     border="2px solid"
+    borderTopLeftRadius={24}
+    borderBottomRightRadius={24}
     display={{ base: "none", lg: "block" }}
   >
     <Heading size="lg" borderBottom="2px dotted" padding={3} color="pink.300">
@@ -96,6 +98,8 @@ const MobileTOC = ({ headings }: { headings: BlogPostHeading[] }) => {
         flexDirection="column"
         paddingX={1}
         border="2px solid"
+        borderTopLeftRadius={24}
+        borderBottomRightRadius={24}
         bgColor="var(--theme-mobile-nav-bg)"
         overflow="hidden"
         initial="closed"

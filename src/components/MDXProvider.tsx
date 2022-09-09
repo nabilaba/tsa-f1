@@ -41,6 +41,7 @@ const mdComponents = {
     <Image
       as="img"
       border="2px solid var(--theme-pink)"
+      borderRadius={8}
       {...props}
     />
   ),
@@ -68,6 +69,8 @@ const mdComponents = {
       mb={4}
       fontSize="xl"
       textAlign="justify"
+      wordBreak="break-word"
+      whiteSpace="pre-wrap"
       {...props}
     />
   ),
@@ -88,7 +91,7 @@ const mdComponents = {
   pre: (props: ComponentProps) => <Box as="pre" {...props} p={2} my={8} />,
   code: (props: ComponentProps) => <Code {...props} bgColor="transparent" />,
   ul: (props: ComponentProps) => (
-    <List ml={10} as="ul" styleType="circle" fontSize="xl" {...props} />
+    <List ml={10} as="ul" styleType="disc" fontSize="xl" {...props} />
   ),
   ol: (props: ComponentProps) => (
     <List ml={10} as="ol" styleType="decimal" fontSize="xl" {...props} />
