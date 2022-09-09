@@ -9,7 +9,7 @@ export const useBlogListQuery = () => {
         edges {
           node {
             timeToRead
-            excerpt
+            excerpt(pruneLength: 500)
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")

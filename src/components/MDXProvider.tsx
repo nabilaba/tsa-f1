@@ -37,32 +37,38 @@ type ComponentProps = {
 };
 
 const mdComponents = {
+  img: (props: ComponentProps) => (
+    <Image
+      as="img"
+      border="2px solid var(--theme-pink)"
+      {...props}
+    />
+  ),
   h1: (props: ComponentProps) => (
-    <Heading as="h1" size="2xl" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h1" size="2xl" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h2: (props: ComponentProps) => (
-    <Heading as="h2" size="xl" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h2" size="xl" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h3: (props: ComponentProps) => (
-    <Heading as="h3" size="lg" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h3" size="lg" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h4: (props: ComponentProps) => (
-    <Heading as="h4" size="md" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h4" size="md" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h5: (props: ComponentProps) => (
-    <Heading as="h5" size="sm" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h5" size="sm" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h6: (props: ComponentProps) => (
-    <Heading as="h6" size="xs" mt={12} {...props} scrollMarginTop="100px" />
+    <Heading as="h6" size="xs" mt={5} {...props} scrollMarginTop="100px" />
   ),
   p: (props: ComponentProps) => (
     <Text
       as="p"
-      marginY={2}
+      mb={4}
       fontSize="xl"
-      {...props}
-      scrollMarginTop="100px"
       textAlign="justify"
+      {...props}
     />
   ),
   a: (props: ComponentProps) => (
@@ -82,10 +88,10 @@ const mdComponents = {
   pre: (props: ComponentProps) => <Box as="pre" {...props} p={2} my={8} />,
   code: (props: ComponentProps) => <Code {...props} bgColor="transparent" />,
   ul: (props: ComponentProps) => (
-    <List ml={6} as="ul" styleType="circle" fontSize="xl" {...props} />
+    <List ml={10} as="ul" styleType="circle" fontSize="xl" {...props} />
   ),
   ol: (props: ComponentProps) => (
-    <List ml={6} as="ol" styleType="decimal" fontSize="xl" {...props} />
+    <List ml={10} as="ol" styleType="decimal" fontSize="xl" {...props} />
   ),
   li: (props: ComponentProps) => <ListItem {...props} />,
   hr: (props: ComponentProps) => <Divider my={8} {...props} />,

@@ -1,7 +1,13 @@
 ---
 title: "Ancaman Keamanan Siber pada Jaringan Komputer"
-date: 2022-09-08
+date: 2022-09-09
 ---
+
+import { Image } from "@chakra-ui/react";
+import image1 from "./assets/image1.png";
+import { useLazyImage } from "../../hooks/useLazyImage";
+
+<img src={useLazyImage(image1)} />
 
 <p style="text-indent: 2em">
   Jaringan komputer merupakan bagian yang tak bisa dipisahkan dengan teknologi
@@ -50,7 +56,7 @@ Manfaat Jaringan Komputer secara umum yang akan bisa didapatkan adalah sebagai b
 
 ## Dampak jika terjadinya insiden pada jaringan komputer
 
-Serangan pada suatu sistem jaringan komputer sendiri pada dasarnya memiliki tiga gelombang tren utama yaitu(Schneier, 2000) :
+<p style="margin-bottom: 0;">Serangan pada suatu sistem jaringan komputer sendiri pada dasarnya memiliki tiga gelombang tren utama yaitu(Schneier, 2000) :</p>
 
 1. Gelombang pertama adalah serangan fisik. Serangan ini ditujukan kepada fasilitas jaringan, perangkat elektronik, dan komputer. Sebagai pertahanan terhadap serangan jenis ini biasanya digunakan sistem backup ataupun sistem komputer yang terdistribusi, sehingga mencegah kesalahan di satu titik mengakibatkan seluruh sistem menjadi tidak bekerja.
 2. Gelombang kedua adalah serangan sintaktik. Serangan ini ditujukan terhadap kerentanan (vulnerability) pada software, celah yang ada pada algoritma kriptografi atau protokol. Serangan Denial of Services (DoS) juga tergolong pada serangan jenis ini. Serangan jenis inilah yang saat ini paling populer. Tetapi cara penanganannya telah diketahui dan biasanya pihak administrator atau pengguna yang lalai menerapkannya.
@@ -58,7 +64,7 @@ Serangan pada suatu sistem jaringan komputer sendiri pada dasarnya memiliki tiga
 
 ## Pencegahan Ancaman Keamanan pada Jaringan Komputer
 
-Aspek pengamanan sistem
+<p style="margin-bottom: 0;">Aspek pengamanan sistem</p>
 
 1. Rancangan sistem, tidak harus bergantung pada kerahasiaan rancangan mekanisme pengamanan.
 2. Dapat diterima oleh banyak pemakai tanpa mengganggu kerja pemakai dan memenuhi kebutuhan otorisasi pengaksesan.
@@ -66,8 +72,7 @@ Aspek pengamanan sistem
 4. Kewenangan serendah mungkin sesuai tugas dan tanggung jawab pemakai.
 5. Mekanisme yang ekonomis, sederhana dan seragam hingga memudahkan verifikasi.
 
-## Langkah-Langkah Pengamanan Berdasarkan lapisan TCP/IP
-
+## Langkah-Langkah Pengamanan Berdasarkan lapisan TCP atau IP
 Untuk mempermudah pengamanan, pemeliharaan serta meningkatkan kompatibilitas antar berbagai peralatan, maka langkah-langkah dibagi sesuai dengan lapisan TCP/IP :
 
 1. Link (Lapisan OSI 1 dan 2), Ethernet, Wi-Fi. Implementasi untuk lapisan ini biasanya terletak pada device driver ataupun chipset firmware.
@@ -88,20 +93,29 @@ Salah satu contoh terkenal kegagalan keamanan fisik melihat situs collection
 Chicago dirampok empat kali dalam dua tahun dengan perampok mengambil 20
 server! Wow!!!
 
-a. Risiko keamanan fisik Berikut empat bidang yang menjadi perhatian atas ancaman
-fisik:
+<ol>
+  <li>
+    Risiko keamanan fisik Berikut empat bidang yang menjadi perhatian atas
+    ancaman fisik:
+  </li>
+  <ul>
+    <li>Kelangsungan bisnis</li>
+    <li>Lanskap ancaman yang lebih besar</li>
+    <li>Kurang penyatuan antara keamanan fisik dan cyber</li>
+    <li>Tantangan tak terduga</li>
+  </ul>
+  <li>Menyatukan tim keamanan fisik dan TI</li>
+  <p>
+    Pertumbuhan teknologi keamanan fisik ini berarti TI dan keamanan fisik perlu
+    beroperasi lebih dekat. Log digital perlu diproses, disimpan, dan disajikan
+    kepada orang yang tepat. Model AI mungkin perlu dibuat dan sistem dilatih.
+    Yang penting, semua perangkat yang terhubung ke internet harus diamankan
+    dengan benar.
+  </p>
+</ol>
 
-- Kelangsungan bisnis
-- Lanskap ancaman yang lebih besar
-- Kurang penyatuan antara keamanan fisik dan cyber
-- Tantangan tak terduga
+> _“Sistem keamanan fisik bukan lagi sekadar sensor yang melaporkan kembali kepada pengguna apakah mendeteksi gerakan atau tidak”_ kata Kennedy. Perangkat ini sering dapat diretas dari jarak jauh. Kamera CCTV, misalnya, merupakan bagian besar dari botnet Mirai yang digunakan untuk mengambil alih kota Dyn dalam serangan DDoS besar pada tahun 2016. Jika jaringan sensor Anda tidak tersegmentasi dan dilindungi secara memadai, cacat pada satu perangkat dapat memungkinkan penyerang untuk menonaktifkan berbagai proses keamanan Anda.
 
-b. Menyatukan tim keamanan fisik dan TI
-Pertumbuhan teknologi keamanan fisik ini berarti TI dan keamanan fisik perlu beroperasi lebih dekat. Log digital perlu diproses, disimpan, dan disajikan kepada orang yang tepat. Model AI mungkin perlu dibuat dan sistem dilatih. Yang penting, semua perangkat yang terhubung ke internet harus diamankan dengan benar.
+> _“Teknologi yang mulai diterapkan oleh perusahaan-perusahaan ini sangat menjanjikan dan benar-benar dengan pola pikir mencoba untuk menghentikan orang membobol gedung, tetapi mereka masih belum matang dalam siklus pengembangan dan akan membutuhkan waktu lama untuk memperbaikinya,”_ kata Kennedy.
 
-> *“Sistem keamanan fisik bukan lagi sekadar sensor yang melaporkan kembali kepada pengguna apakah mendeteksi gerakan atau tidak”* kata Kennedy. Perangkat ini sering dapat diretas dari jarak jauh. Kamera CCTV, misalnya, merupakan bagian besar dari botnet Mirai yang digunakan untuk mengambil alih kota Dyn dalam serangan DDoS besar pada tahun 2016. Jika jaringan sensor Anda tidak tersegmentasi dan dilindungi secara memadai, cacat pada satu perangkat dapat memungkinkan penyerang untuk menonaktifkan berbagai proses keamanan Anda.
-
-> “Teknologi yang mulai diterapkan oleh perusahaan-perusahaan ini sangat menjanjikan dan benar-benar dengan pola pikir mencoba untuk menghentikan orang membobol gedung, tetapi mereka masih belum matang dalam siklus pengembangan dan akan membutuhkan waktu lama untuk memperbaikinya,” kata Kennedy.
-
-> “Tetapi saat ini sebagian besar fokusnya adalah seputar konvergensi pusat kendali; daripada memiliki beberapa pusat kendali CCTV di seluruh Inggris, mereka hanya akan memiliki satu pusat kendali besar untuk meningkatkan efisiensi operasional”.
-> Meski kedua tim tidak bergabung menjadi satu fungsi besar, Kenny mengatakan tetap penting bahwa keduanya bekerja sama dan memiliki tanggung jawab bersama.
+> _“Tetapi saat ini sebagian besar fokusnya adalah seputar konvergensi pusat kendali; daripada memiliki beberapa pusat kendali CCTV di seluruh Inggris, mereka hanya akan memiliki satu pusat kendali besar untuk meningkatkan efisiensi operasional”_. Meski kedua tim tidak bergabung menjadi satu fungsi besar, Kenny mengatakan tetap penting bahwa keduanya bekerja sama dan memiliki tanggung jawab bersama.

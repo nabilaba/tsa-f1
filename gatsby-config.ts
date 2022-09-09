@@ -10,7 +10,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sharp`,
-    `gatsby-remark-images`,
     `@chakra-ui/gatsby-plugin`,
     `gatsby-plugin-react-helmet`,
     `gatsby-remark-reading-time`,
@@ -56,19 +55,10 @@ module.exports = {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               className: "blog-permalink",
-              isIconAfterHeader: true,
+              isIconAfterHeader: false,
               elements: [`h2`]
             }
           },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1600,
-              wrapperStyle:
-                `margin: 1rem auto; border: 2px solid var(--theme-pink);`
-            }
-          },
-          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-external-links`,
