@@ -7,6 +7,7 @@ export type BlogPostProps = {
       frontmatter: {
         path: string;
         title: string;
+        members: any;
         date: string;
       };
       fields: {

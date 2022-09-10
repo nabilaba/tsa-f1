@@ -14,7 +14,7 @@ const MotionFlex = motion(Flex);
 
 const AboutPage = () => {
   return (
-    <HomeContainer id="team" marginBottom="0">
+    <HomeContainer id="team" marginBottom="0" maxW="100%">
       <AnimatedContainer direction="column">
         <SectionHeading>Our Team</SectionHeading>
         <Flex
@@ -30,8 +30,14 @@ const AboutPage = () => {
 };
 
 const SkillSet = ({ member }: { member: About[] }) => (
-  <Flex direction="column" marginX={10} marginY={5}>
-    <SimpleGrid columns={{ base: 2, lg: 3}} spacing={{ base: "75px", md: "75px" }} marginY={10}>
+  <Flex direction="column">
+    <SimpleGrid
+      columns={{ base: 2, lg: 3 }}
+      spacingX="50px"
+      spacingY="75px"
+      autoColumns={"1fr"}
+      autoRows={"1fr"}
+    >
       {member.map((member: About) => (
         <LargeSkill key={member.name} member={member} />
       ))}
@@ -47,8 +53,8 @@ const LargeSkill = ({ member }: { member: About }) => (
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.85 }}
   >
-    <Avatar name={member.name} size="2xl" />
-    <Heading alignSelf="center">{member.name}</Heading>
+    <Avatar name={member.name} src={member.image} size="2xl" />
+    <Heading fontSize={"xl"} mt="2">{member.name}</Heading>
     {member.as}
   </MotionFlex>
 );

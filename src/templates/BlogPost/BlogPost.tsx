@@ -14,6 +14,7 @@ import Seo from "../../components/SEO";
 import TableOfContents from "../../components/TableOfContents";
 import ReadingProgress from "../../components/ReadingProgress";
 import { BlogPostProps } from "../../types/BlogPost";
+import Team from "./Team";
 
 // Styling for the code blocks
 require("../../css/prismjs/prism-holi.css"); // eslint-disable-line
@@ -21,7 +22,7 @@ require("../../css/prismjs/prism-holi.css"); // eslint-disable-line
 const BlogPost = ({ data, pageContext }: BlogPostProps) => {
   const {
     body,
-    frontmatter: { title, date },
+    frontmatter: { title, members, date },
     headings,
     fields: { readingTime }
   } = data.mdx;
@@ -38,11 +39,7 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
           <Flex direction="column">
             <SectionHeading marginBottom={0}>{title}</SectionHeading>
 
-            <Flex
-              justifyContent="space-evenly"
-              color="gray.300"
-              my="5"
-            >
+            <Flex justifyContent="space-evenly" color="gray.300" my="5">
               <Flex alignItems="center">
                 <Icon as={HiCalendar} marginRight={2} />
                 {date}
@@ -58,34 +55,41 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
             {/* The blog's body */}
             <MDX>{body}</MDX>
 
-            {/* Links to the previous and next blogs */}
-            <Divider />
+            <Box marginY="10">
+              <Team members={members} />
+            </Box>
 
-            <Flex
-              marginY={10}
-              justifyContent="space-between"
-              fontSize="xl"
-              alignItems="center"
-            >
-              {prev !== null && (
-                <Link as={GatsbyLink} to={prev.fields.slug} width="100%">
-                  <Flex alignItems="center">
-                    <Icon as={IoArrowBack} />
-                    <Text noOfLines={1}>{prev.frontmatter.title}</Text>
-                  </Flex>
-                </Link>
-              )}
-              {next !== null && (
-                <Link as={GatsbyLink} to={next.fields.slug} width="100%">
-                  <Flex alignItems="center" justifyContent="flex-end">
-                    <Text noOfLines={1}>{next.frontmatter.title}</Text>
-                    <Icon alignSelf="center" as={IoArrowForward} />
-                  </Flex>
-                </Link>
-              )}
-            </Flex>
+            {prev !== null || next !== null && (
+              <>
+                <Divider />
 
-            <Divider />
+                <Flex
+                  marginY={10}
+                  justifyContent="space-between"
+                  fontSize="xl"
+                  alignItems="center"
+                >
+                  {prev !== null && (
+                    <Link as={GatsbyLink} to={prev.fields.slug} width="100%">
+                      <Flex alignItems="center">
+                        <Icon as={IoArrowBack} />
+                        <Text noOfLines={1}>{prev.frontmatter.title}</Text>
+                      </Flex>
+                    </Link>
+                  )}
+                  {next !== null && (
+                    <Link as={GatsbyLink} to={next.fields.slug} width="100%">
+                      <Flex alignItems="center" justifyContent="flex-end">
+                        <Text noOfLines={1}>{next.frontmatter.title}</Text>
+                        <Icon alignSelf="center" as={IoArrowForward} />
+                      </Flex>
+                    </Link>
+                  )}
+                </Flex>
+
+                <Divider />
+              </>
+            )}
           </Flex>
 
           {/* Table of Contents */}
@@ -110,6 +114,10 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
+        members {
+          name
+          as
+        }
         date(formatString: "DD MMMM, YYYY")
       }
       headings {
