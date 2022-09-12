@@ -9,32 +9,32 @@ import bima from "../images/bima.png";
 export const member: About[] = [
   {
     name: "Rizky Yugitama, S.S.T.TP., M.T",
-    as: "Product Owner / Mentor",
+    as: "Mentor",
     image: kakrizky,
   },
   {
-    name: "Izzhan Hawary",
-    as: "Scrum Master",
-    image: izzhan,
-  },
-  {
-    name: "Talita Listra",
-    as: "Cyber Security 1",
-    image: talita,
-  },
-  {
     name: "Muhammad Aldi Irfan",
-    as: "Cyber Security 2",
+    as: "Member",
     image: aldi,
   },
   {
+    name: "Nabil Aziz Bima Anggita",
+    as: "Member",
+    image: bima,
+  },
+  {
+    name: "Izzhan Hawary",
+    as: "Member",
+    image: izzhan,
+  },
+  {
     name: "Muhammad Zainur Rifqi Al Munawwar",
-    as: "Cyber Security 3",
+    as: "Member",
     image: zainur,
   },
   {
-    name: "Nabil Aziz Bima Anggita",
-    as: "Web Developer / Publisher",
-    image: bima,
-  }
+    name: "Talita Listra",
+    as: "Member",
+    image: talita,
+  },
 ];

@@ -34,7 +34,7 @@ const SkillSet = ({ member }: { member: About[] }) => (
     <SimpleGrid
       columns={{ base: 2, lg: 3 }}
       spacingX="50px"
-      spacingY="75px"
+      spacingY={{ base: "50px", md: "75px" }}
       autoColumns={"1fr"}
       autoRows={"1fr"}
     >
