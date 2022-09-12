@@ -12,9 +12,9 @@ members:
 date: 2022-09-09
 ---
 
-import { Image } from "@chakra-ui/react";
 import image1 from "./assets/image1.png";
 import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
 
 <img src={useLazyImage(image1)} />
 
@@ -141,8 +141,7 @@ Untuk mempermudah pengamanan, pemeliharaan serta meningkatkan kompatibilitas ant
 
 <br />
 
-<div style="border: 1px solid #f687b3; padding: 20px;">
-  <h3>Referensi</h3>
+<Referensi>
   <p style="text-align: start;">
     <i>Ancaman & Insiden Keamanan Jaringan Komputer [PDF Document].</i> (n.d.).
     fdokumen.id. Retrieved September 9, 2022, from{" "}
@@ -163,4 +162,4 @@ Untuk mempermudah pengamanan, pemeliharaan serta meningkatkan kompatibilitas ant
       https://root.web.id/blog/serangan-pada-jaringan-komputer-dan-cara-pencegahanz
     </a>
   </p>
-</div>
+</Referensi>
