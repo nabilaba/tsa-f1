@@ -1,11 +1,12 @@
 import React from "react";
+import { Box, Heading } from "@chakra-ui/react";
 
 const Referensi = ({ children }: { children: any }) => {
   return (
-    <div style={{ border: "1px solid #f687b3", padding: "20px" }}>
-      <h3>Referensi</h3>
+    <Box borderWidth="1px" borderColor="#f687b3" padding="20px">
+      <Heading as="h3">Referensi</Heading>
       {children}
-    </div>
+    </Box>
   );
 };
 export default Referensi;
