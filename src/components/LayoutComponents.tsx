@@ -71,6 +71,7 @@ export const BlogContainer = forwardRef<
       ref={ref}
       templateColumns={{ base: "1fr", lg: "3fr 1fr" }}
       gap={{ base: 0, lg: 6 }}
+      marginBottom="8rem"
       marginX="auto"
       marginTop={{ base: "2rem", lg: "4rem" }}
       minH="100vh"

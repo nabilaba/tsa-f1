@@ -14,7 +14,7 @@ const MotionFlex = motion(Flex);
 
 const AboutPage = () => {
   return (
-    <HomeContainer id="team" marginBottom="0" maxW="100%">
+    <HomeContainer id="team" maxW="100%">
       <AnimatedContainer direction="column">
         <SectionHeading>Our Team</SectionHeading>
         <Flex
