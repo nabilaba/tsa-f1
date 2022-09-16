@@ -69,7 +69,7 @@ export const BlogContainer = forwardRef<
   return (
     <Grid
       ref={ref}
-      templateColumns={{ base: "1fr", lg: "3fr 1fr" }}
+      templateColumns={{ base: "1fr", lg: "2fr 1.5fr", xl: "3fr 1.5fr" }}
       gap={{ base: 0, lg: 6 }}
       marginBottom="6rem"
       marginX="auto"

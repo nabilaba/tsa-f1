@@ -13,12 +13,11 @@ date: 2022-09-16
 ---
 
 import thumbnailminggu2 from "./assets/thumbnailminggu2.png";
+import contohdigitalforensics from "./assets/contohdigitalforensics.png";
 import { useLazyImage } from "../../hooks/useLazyImage";
 import Referensi from "../../components/Referensi";
 
 <img src={useLazyImage(thumbnailminggu2)} />
-
-## Pembukaan
 
 <p style="text-indent: 2em">
   Digital Forensic atau juga dikenal sebagai Ilmu Forensik Digital, merupakan
@@ -58,14 +57,36 @@ import Referensi from "../../components/Referensi";
   diganti, disembunyikan atau bahkan dihapus.
 </p>
 
+## Perbandingan Defenisi Digital Forensic dari Berbagai Sumber
+
+<p style="text-indent: 2em;">
+  Menurut Ken Zatyko, "Ilmu Digital Forensik: Penerapan ilmu komputer dan
+  prosedur investigasi untuk tujuan hukum yang melibatkan analisis bukti digital
+  (informasi nilai pembuktian yang disimpan atau ditransmisikan dalam bentuk
+  biner) setelah otoritas pencarian yang tepat, lacak balak, validasi dengan
+  matematika ( fungsi hash), penggunaan alat-alat divalidasi, pengulangan,
+  pelaporan, dan presentasi mungkin ahli."
+</p>
+<p style="text-indent: 2em;">
+  Menurut Warren Harrison, “Forensik Digital Adalah Ekstrak bukti dari komputer
+  atau perangkat digital lainnya Biasanya melibatkan mengekstraksi isi file dan
+  menafsirkan makna mereka.”
+</p>
+<p style="text-indent: 2em;">
+  Menurut McKemmish, “Dalam artikelnya mendefinisikan Forensik Computing?
+  sebagai "proses identifikasi, melestarikan, menganalisis, dan menyajikan bukti
+  digital dengan cara yang dapat diterima secara hukum."
+</p>
+
 ## Apa Tujuan Penggunaan Digital Forensics?
 
-<p style="margin-bottom: 0;">
+<p style="text-indent: 2em;">
   Setelah memahami pengertian dari apa itu digital forensic, kita juga
   diharapkan tau tujuan dari penggunaan digital forensic itu sendiri. Tujuan
   penggunaan forensik digital yang paling umum adalah untuk mendukung atau
   menyangkal hipotesis di pengadilan pidana atau perdata.
-  <br />
+</p>
+<p style="text-indent: 2em; margin-bottom: 0;">
   Secara khusus, berikut ini merupakan tujuan dalam penggunaan serta penerapan
   digital forensic yang harus kalian ketahui:
 </p>
@@ -84,12 +105,9 @@ import Referensi from "../../components/Referensi";
   tidak seketat forensik tradisional. Dalam kasus perdata, forensik digital
   dapat membantu penemuan elektronik (e-discovery). Seorang pemeriksa forensik
   akan mencoba untuk memahami sifat dan tingkat serangan, serta mencoba
-  mengidentifikasi penyerang.
-</p>
-<p style="text-indent: 2em">
-  Ketika enkripsi menjadi lebih luas, penyelidikan forensik menjadi lebih sulit,
-  karena undang-undang terbatas yang memaksa individu untuk mengungkapkan kunci
-  enkripsi.
+  mengidentifikasi penyerang. Ketika enkripsi menjadi lebih luas, penyelidikan
+  forensik menjadi lebih sulit, karena undang-undang terbatas yang memaksa
+  individu untuk mengungkapkan kunci enkripsi.
 </p>
 
 ## Bagaimana Proses Digital Forensic?
@@ -104,6 +122,44 @@ import Referensi from "../../components/Referensi";
 3. **Analisis**: agen investigasi merekonstruksi fragmen data dan menarik kesimpulan berdasarkan bukti yang ditemukan.
 4. **Dokumentasi**: catatan dari semua data yang terlihat harus dibuat.
 5. **Presentasi**: proses peringkasan dan penjelasan kesimpulan.
+
+## Digital Forensik Penting bagi Proses Hukum
+
+<p style="text-indent: 2em">
+  Masih dikutip dari interpol.int, digital forensik berguna untuk mengekstrak
+  data dari bukti-bukti elektronik tersebut dan memprosesnya menjadi data
+  intelijen sehingga dapat ditindaklanjuti dan disajikan sebagai temuan untuk
+  penuntutan sebuah kasus hukum.
+</p>
+<p style="text-indent: 2em">
+  Dengan kata lain, penyidik forensik mampu menyelidiki, memulihkan, dan
+  mengembalikan data-data elektronik, seperti foto, dokumen, surel, atau
+  sejenisnya, meskipun data tersebut telah dirusak atau dihapus.
+</p>
+<p style="text-indent: 2em">
+  Sebab, bukti elektronik yang ditemukan oleh penyidik masih berpotensi dirusak
+  oleh pelaku kejahatan siber dibutuhkan tahapan yang sistematis dan ketat agar
+  bukti dapat dihadirkan dan diterima di pengadilan.
+</p>
+<p style="text-indent: 2em; margin-bottom: 0;">
+  Mengutip laman eccouncil.org, setidaknya terdapat lima tahap utama dalam
+  melakukan pengecekan digital forensik, yakni:
+</p>
+
+1. Penyidik melakukan pengidentifikasian guna mengetahui tempat penyimpanan bukti-bukti yang disembunyikan.
+2. Penyidik melakukan pengamanan dan pengisolasian data agar tidak dirusak oleh pihak lain.
+3. Data atau bukti forensik tersebut dianalisis dan direkonstruksi ulang guna menyusun kesimpulan.
+4. Bukti tersebut dicatat dan didokumentasikan ulang untuk mereka adegan ulang pada tempat kejadian perkara.
+5. Temuan bukti dan hasil kesimpulan dilaporkan serta dipresentasikan pada proses pengadilan.
+
+## Hal-Hal yang Dapat Dilakukan oleh Investigator Digital Forensic
+
+- **Melacak Dokumen yang Dihapus** <br />
+  Pelaku kecurangan biasanya berupaya untuk menghapus jejak, salah satunya dengan menghapus dokumen pada perangkat. Meskipun dokumen tersebut telah dihapus, namun perangkat dapat menandai lokasi dokumen yang pernah disimpan dalam memorinya. Dokumen yang telah hilang ini tidak mungkin dapat dikembalikan secara utuh, namun seorang investigator digital forensic dengan bantuan software forensic bisa mengidentifikasi metadata dokumen tersebut, siapa pembuat, kapan terakhir dibuat dan kapan terakhir diakses. Tipe data seperti ini dapat digunakan untuk membuktikan atau tak membuktikan klaim terkait bukti yang ditemukan pada perangkat keras.
+- **Mengungkapkan Riwayat Pencarian Internet dan Email** <br />
+  Menemukan riwayat pencarian internet dan email yang dikirim dan diterima meskipun sudah dihapus juga salah satu hal yang dapat ditemukan oleh investigator digital forensic. Bahkan investigator digital forensic juga dapat mengetahui apabila sebuah email merupakan rekayasa (forged email) dengan temuan-temuan digital forensic semacam itu, investigator bisa menyediakan bukti kunci bagi sebuah kasus.
+- **Bersinergi** <br />
+  Tidak jarang, investigator digital forensic akan bekerja sama dengan para investigator lainnya dalam menginvestigasi sebuah kasus. Contohnya, investigator akuntansi forensik bisa memberitau investigator digital forensic kata kunci spesifik pada computer atau alat media digital lainnya yang dijadikan sebagai barang bukti sehingga bisa menghemat waktu dan usaha, ataupun sebaliknya.
 
 ## Jenis dan Macam Macam Digital Forensic
 
@@ -123,11 +179,25 @@ import Referensi from "../../components/Referensi";
 4. Malware Forensics, menangani identifikasi _code_ atau code berbahaya, untuk mempelajari muatannya, virus, dan worm.
 5. E-Mail Forensics
 6. Memory Forensics, pengumpulan data dari memori sistem (register atau _registry_ sistem, cache, RAM) dalam bentuk mentah dan kemudian mengukir data dari _raw dump_.
-7. Phone Forensics
+7. Phone Forensics, Forensik ponsel atau phone forensics ini terutama berkaitan dengan pemeriksaan dan analisis perangkat seluler (mobile).
 
 <br />
 
-<p style="margin-bottom: 0;">
+Contoh dari Digital Forensics
+
+<img src={useLazyImage(contohdigitalforensics)} />
+<br />
+<p style="text-indent: 2em;">
+  Mengacu pada penjelasan sebelumnya, bahwa forensik digital adalah versi modern
+  dari ilmu forensik dan berhubungan dengan proses recover atau pemulihan dan
+  penyelidikan materi yang ditemukan di device atau perangkat digital.
+</p>
+<p style="text-indent: 2em;">
+  Ini paling sering digunakan dalam situasi kejahatan dunia maya, termasuk namun
+  tidak terbatas pada atribusi, identifikasi kebocoran dalam suatu organisasi
+  dan menilai setiap kerusakan yang terjadi selama pelanggaran.
+</p>
+<p style="text-indent: 2em; margin-bottom: 0;">
   Belakangan ini, organisasi komersial telah menggunakan digital forensik dalam
   beberapa jenis contoh masalah berikut:
 </p>
@@ -137,7 +207,30 @@ import Referensi from "../../components/Referensi";
 - Spionase industri
 - Investigasi kebangkrutan
 
-## Penutup atau Kesimpulan
+<br />
 
-**Jadi, digital forensic adalah** aktivitas penyelidikan yang dilakukan untuk menemukan bukti digital yang akan memperkuat atau melemahkan bukti fisik dari kasus yang ditangani. Istilah forensik digital pada awalnya identik dengan forensik komputer. Tujuan proses ini menyimpan bukti apapun dalam bentuk aslinya saat melakukan penyelidikan terstruktur dengan mengumpulkan, mengidentifikasi, dan memvalidasi informasi digital untuk merekonstruksi peristiwa masa lalu. Konteksnya paling sering untuk penggunaan data di pengadilan, meskipun forensik digital dapat digunakan dalam kasus lain.
-Demikian artikel mengenai Digital Forensics yang kami bagikan, semoga bermanfaat dan dapat menambah wawasan para pembaca.
+**Jadi, digital forensic adalah** aktivitas penyelidikan yang dilakukan untuk menemukan bukti digital yang akan memperkuat atau melemahkan bukti fisik dari kasus yang ditangani. Istilah forensik digital pada awalnya identik dengan forensik komputer. Tujuan proses ini menyimpan bukti apapun dalam bentuk aslinya saat melakukan penyelidikan terstruktur dengan mengumpulkan, mengidentifikasi, dan memvalidasi informasi digital untuk merekonstruksi peristiwa masa lalu. Konteksnya paling sering untuk penggunaan data di pengadilan, meskipun forensik digital dapat digunakan dalam kasus lain. Demikian artikel mengenai Digital Forensics yang kami bagikan, semoga bermanfaat dan dapat menambah wawasan para pembaca.
+
+<Referensi>
+  <p style="text-align: start;">
+    <a href="https://ulasforensikadigital.weebly.com/home/definisi-digital-forensics">
+      https://ulasforensikadigital.weebly.com/home/definisi-digital-forensics
+    </a>
+    <br />
+    <a href="https://rifqimulyawan.com/blog/pengertian-digital-forensic/">
+      https://rifqimulyawan.com/blog/pengertian-digital-forensic/
+    </a>
+    <br />
+    <a href="https://bahasan.id/hal-hal-yang-dapat-dilakukan-oleh-investigator-digital-forensic/">
+      https://bahasan.id/hal-hal-yang-dapat-dilakukan-oleh-investigator-digital-forensic/
+    </a>
+    <br />
+    <a href="http://www.ccsc.org/northwest/2006/ppt/forensicstutorialHARRISON.pdf">
+      http://www.ccsc.org/northwest/2006/ppt/forensicstutorialHARRISON.pdf
+    </a>
+    <br />
+    <a href="https://nasional.tempo.co/read/1616840/digital-forensik-pengertian-kegunaan-dan-tahapan">
+      https://nasional.tempo.co/read/1616840/digital-forensik-pengertian-kegunaan-dan-tahapan
+    </a>
+  </p>
+</Referensi>
