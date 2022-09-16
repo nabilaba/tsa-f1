@@ -58,38 +58,35 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
             <Box marginY="10">
               <Team members={members} />
             </Box>
+            <>
+              <Divider />
 
-            {prev !== null || next !== null && (
-              <>
-                <Divider />
+              <Flex
+                marginY={10}
+                justifyContent="space-between"
+                fontSize="xl"
+                alignItems="center"
+              >
+                {prev !== null && (
+                  <Link as={GatsbyLink} to={prev.fields.slug} width="100%">
+                    <Flex alignItems="center">
+                      <Icon as={IoArrowBack} />
+                      <Text noOfLines={1}>{prev.frontmatter.title}</Text>
+                    </Flex>
+                  </Link>
+                )}
+                {next !== null && (
+                  <Link as={GatsbyLink} to={next.fields.slug} width="100%">
+                    <Flex alignItems="center" justifyContent="flex-end">
+                      <Text noOfLines={1}>{next.frontmatter.title}</Text>
+                      <Icon alignSelf="center" as={IoArrowForward} />
+                    </Flex>
+                  </Link>
+                )}
+              </Flex>
 
-                <Flex
-                  marginY={10}
-                  justifyContent="space-between"
-                  fontSize="xl"
-                  alignItems="center"
-                >
-                  {prev !== null && (
-                    <Link as={GatsbyLink} to={prev.fields.slug} width="100%">
-                      <Flex alignItems="center">
-                        <Icon as={IoArrowBack} />
-                        <Text noOfLines={1}>{prev.frontmatter.title}</Text>
-                      </Flex>
-                    </Link>
-                  )}
-                  {next !== null && (
-                    <Link as={GatsbyLink} to={next.fields.slug} width="100%">
-                      <Flex alignItems="center" justifyContent="flex-end">
-                        <Text noOfLines={1}>{next.frontmatter.title}</Text>
-                        <Icon alignSelf="center" as={IoArrowForward} />
-                      </Flex>
-                    </Link>
-                  )}
-                </Flex>
-
-                <Divider />
-              </>
-            )}
+              <Divider />
+            </>
           </Flex>
 
           {/* Table of Contents */}
