@@ -1,0 +1,528 @@
+---
+title: "Topologi Jaringan"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    { name: "Talita Listra", as: "Scrum Master / Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Muhammad Zainur Rifqi Al Munawwar", as: "Pembuat Laporan" },
+    { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
+    { name: "Nabil Aziz Bima Anggita", as: "Publisher" }
+  ]
+date: 2022-09-23
+---
+
+import thumbnailminggu3 from "./assets/image8.png";
+import topologijaringan from "./assets/image9.png";
+import localtalk from "./assets/image10.png";
+import fddi from "./assets/image2.png";
+import topologibus from "./assets/image7.png";
+import topologiring from "./assets/image1.png";
+import topologimesh from "./assets/image5.jpg";
+import topologistar from "./assets/image3.jpg";
+import topologitree from "./assets/image6.jpg";
+import topologipeertopeer from "./assets/image11.jpg";
+import topologilinier from "./assets/image7.png";
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+
+<img src={useLazyImage(thumbnailminggu3)} />
+
+<p style="margin-top: 2rem">
+  Pernahkah kamu mendengar istilah topologi jaringan? yap, Istilah topologi
+  jaringan mungkin tidak asing lagi bagi anak IT karena topologi jaringan adalah
+  basic seorang network engineer dalam membangun sebuah jaringan skala kecil dan
+  besar.
+</p>
+<p>
+  Topologi jaringan adalah suatu konsep untuk menghubungkan dua komputer atau
+  lebih agar dapat berkomunikasi satu sama lain. Topologi jaringan merupakan
+  dasar dalam ilmu jaringan dan teknologi informatika. Menurut Kamus Besar
+  Bahasa Indonesia (KBBI) daring, topologi adalah susunan dan keterkaitan
+  komputer dalam jaringan komputer, Jadi kali ini kita akan bahas mengenai
+  topologi jaringan, Let’s goo…!!!
+</p>
+
+<p>
+  Menurut Kamus Besar Bahasa Indonesia (KBBI) daring, topologi adalah susunan
+  dan keterkaitan komputer dalam jaringan komputer, Jadi kali ini kita akan
+  bahas mengenai topologi jaringan, Let’s goo…!!!
+</p>
+
+## Pengertian Topologi Jaringan Komputer
+
+<p style="text-indent: 2em">
+  Topologi jaringan komputer adalah metode atau cara yang digunakan agar bisa
+  menghubungkan satu komputer dengan komputer lainnya. Struktur atau jaringan
+  yang digunakan untuk menghubungkan satu komputer dengan komputer lainnya bisa
+  dengan menggunakan kabel maupun nirkabel (tanpa kabel).
+</p>
+<p style="text-indent: 2em">
+  Topologi jaringan menjelaskan hubungan geometris antara unsur-unsur dasar
+  penyusun jaringan, yaitu node, link, dan station. Pemilihan topologi jaringan
+  didasarkan pada skala jaringan, biaya, tujuan, dan penggunaan.
+  Topologi-topologi ini sering kita temui di kehidupan sehari-hari, tetapi kita
+  tak menyadarinya. Topologi pertama yang digunakan adalah topologi bus. Semua
+  topologi memiliki kelebihan dan kekurangan tersendiri.
+</p>
+<p style="text-indent: 2em">
+  Topologi jaringan terbagi menjadi dua yaitu topologi secara fisik dan topologi
+  secara logika. Secara fisik, topologi menjelaskan susunan dari label,
+  komputer, serta lokasi dari seluruh komponen jaringan. Sementara itu, topologi
+  secara logika menetapkan informasi atau aliran data dalam jaringan. Jadi,
+  belajar mengenai topologi jaringan sangat penting
+</p>
+
+## Manfaat Topologi Jaringan Komputer
+
+1. Arah jalur internet menjadi jelas. Jadi, memudahkan network engineer untuk melakukan konfigurasi.
+2. Dapat meminimalisir biaya instalasi jaringan karena semua sudah dihitung dengan matang dalam topologi jaringan. Jadi, minim kemungkinan perangkat kelebihan maupun kurang.
+3. Memudahkan dalam maintenance maupun upgrade di sisi network engineer karena semua telah terstruktur dengan rinci. Pemberian label di setiap kabel juga akan menjadi nilai plus.
+4. Penggunaan menjadi sangat mudah di sisi user karena semua bisa saling berkomunikasi dengan baik.
+
+## Fungsi Topologi Jaringan
+
+1. Untuk mengetahui apakah masing-masing komputer atau host di jaringan komputer dapat berkomunikasi satu sama lain.
+2. Untuk mendapatkan reliabilitas yang tinggi dengan memiliki sumber-sumber alternatif persediaan pada jaringan komputer.
+
+## Tujuan Topologi Jaringan
+
+<p style="text-indent: 2em">
+  Tujuan topologi jaringan digunakan untuk dapat menghubungkan jaringan yang ada
+  sehingga sebuah informasi dapat dikirim dari satu tempat ke tempat lain dengan
+  lebih cepat dan menghasilkan data lebih baik.
+</p>
+
+## Jenis-Jenis Topologi Jaringan
+
+<ol>
+  <li>
+    <h4>Topologi Logis</h4>
+  </li>
+  <p>
+    Topologi Logical (Logis) adalah suatu gambaran bagaimana hubungan yang
+    terjadi antar masing-masing komputer dalam jaringan yang tidak dapat kita
+    lihat secara langsung, tetapi dapat kita merasakannya. Pengertian secara
+    umum Topologi Logis (Logical) merupakan topologi yang menggambarkan hubungan
+    jaringan secara logika yang terjadi pada masing-masing komputer dalam
+    jaringan.
+    <br />
+    <br />
+    Berikut contoh dari Topologi Logis (Logical) :
+  </p>
+  <ol>
+    <li>
+      <b>Ethernet,</b> adalah standar umum untuk menghubungkan kabel ke jaringan
+      komputer. Perangkat yang menggunakan koneksi Ethernet, memanfaatkan jenis
+      kabel tertentu untuk terhubung, mengirim dan menerima data dengan
+      perangkat jaringan lainnya, serta untuk mendapatkan akses ke jaringan yang
+      lebih luas seperti Internet
+    </li>
+    <img src={useLazyImage(topologijaringan)} style="width: 100%" />
+    <h4>Cara Kerja Ethernet</h4>
+    <p>
+      Cara kerja arsitektur ini memakai metoda CSMA/CD (Carrier Sense Multiple
+      Access/collision detection). Bila suatu node mengirimkan paket melewati
+      jaringan, maka node tersebut akan mengecek terlebih dahulu apakah jaringan
+      sedang mengirimkan paket data atau tidak. jika jaringan sedang kosong,
+      maka node akan mengirimkan paket data. Jika ternyata ada paket data lain,
+      pada saat node akan mengirimkan data, maka akan terjadi collision. Bila
+      hal ini terjadi maka jaringan dan node akan berhenti mengirimkan paket
+      data, kemudian node dan jaringan.
+    </p>
+    <h4>Kelebihan dari Ethernet :</h4>
+    <ul>
+      <li>Kecepatan mengirim data mencapai 100 Mbps-1Gbps.</li>
+      <li>Cukup sederhana.</li>
+      <li>Mudah dalam menggunakannya.</li>
+    </ul>
+    <h4>Kekurangan dari Ethernet :</h4>
+    <ul>
+      <li>Sering terjadi tabrakan data pada saat menggunakannya.</li>
+      <li>Jika pemakainya ramai, maka kecepatanya pun melambat.</li>
+    </ul>
+    <li style="margin-top: 1rem">
+      <b>Local Talk</b> merupakan jaringan yang dikembangkan pertama kali oleh
+      Apple Computer Inc untuk komputer macintosh. Metode yang digunakan oleh
+      jaringan Local Talk disebut CSMA/CA (Carrier Sense Multiple Access with
+      Collision Avoidance). Localtalk menggunakan kabel TP khusus yang digunakan
+      untuk menghubungkan sederetan komputer melalui port serial dengan
+      kecepatan yang bisa didapat hanya 230 Kbps.
+    </li>
+    <img src={useLazyImage(localtalk)} style="width: 100%" />
+    <h4>Kelebihan dari Local Talk :</h4>
+    <ul>
+      <li>Kecepatan hanya 230 Kbps.</li>
+      <li>Menggunakan kabel TP khusus.</li>
+    </ul>
+    <h4>Kekurangan dari Local Talk :</h4>
+    <ul>
+      <li>Lambat dalam mengakses.</li>
+      <li>Sering terjadi tabrakan data.</li>
+    </ul>
+    <li style="margin-top: 1rem">
+      <b>
+        FDDI <i>(Fiber Distributed Data Interface)</i>
+      </b>{" "}
+      Adalah sebuah jaringan yang menghubungkan antara dua atau lebih jaringan
+      bahkan pada jarak yang jauh. Metode yang digunakan oleh FDDI adalah model
+      token ring. FDDI menggunakan dua buah topologi ring secara fisik. Proses
+      transmisi biasanya menggunakan satu buah ring, namun jika ada masalah
+      ditemukan akan secara otomatis menggunakan ring yang kedua.
+    </li>
+    <ul>
+      <li>
+        <h4>Media Transmisi FDDI</h4>
+      </li>
+      <p>
+        FDDI menggunakan serat kaca sebagai media transmisi utamanya, namun juga
+        dapat menggunakan media transmisi kabel tembaga dengan menggunakan
+        spesifikasi Copper Distributed Data Interface (CDDI).
+      </p>
+      <img src={useLazyImage(fddi)} style="width: 100%" />
+      <li>
+        <h4>Spesifikasi FDDI</h4>
+        <p>FDDI didefinisikan dalam 4 spesifikasi :</p>
+        <ol>
+          <li>
+            <b>
+              <i>Media Access Control</i>
+            </b>
+            (MAC) : Spesifikasi MAC mendefinisikan bagaimana suatu media transmisi
+            diakses, termasuk definisi format frame, penanganan token, pengalamatan,
+            algoritma perhitungan cyclic redundancy check (CRC), dan mekanisme error
+            recovery.
+          </li>
+          <li>
+            <b>
+              <i>Physical Layer Protocol</i>
+            </b>
+            (PHY) : Spesifikasi PHY mendefinisikan prosedur enkoding/dekoding data,
+            kebutuhan clock, framing dan fungsi lainnya.
+          </li>
+          <li>
+            <b>
+              <i>Physical Medium Dependent</i>
+            </b>
+            (PMD) : PMD mendefinisikan karakteristik media transmisi, termasuk sambungan
+            serat kaca, level listrik, bit error rates, komponen optik, dan konektor
+            yang dibutuhkan.
+          </li>
+          <li>
+            <b>
+              <i>Station Management</i>
+            </b>
+            (SMT) : Spesifikasi SMT mendefinisikan konfigurasi stasiun FDDI, konfigurasi
+            ring, dan kontrol terhadap ring, termasuk penambahan dan pengurangan
+            stasiun baru, inisialisasi, perlindungan terhadap kegagalan dan recovery,
+            penjadwalan, dan koleksi data statistik tentang jaringan FDDI.
+          </li>
+        </ol>
+      </li>
+    </ul>
+    <h4>Kelebihan dari FDDI :</h4>
+    <ul>
+      <li>Menggunakan dua buah topologi ring dalam proses transmisi.</li>
+      <li>Menggunakan kabel fiber optik.</li>
+      <li>Memiliki kecepatan 100 Mbps.</li>
+      <li>Dapat menghubungkan 500 terminal dengan jarak maksimum 2 km.</li>
+    </ul>
+    <h4>Kekurangan dari FDDI :</h4>
+    <ul>
+      <li>Biaya cukup mahal.</li>
+      <li>Boros dalam penggunaan kabel.</li>
+    </ul>
+    <li style="margin-top: 1rem">
+      <b>
+        ATM <i>(Asynchronous Transfer Mode)</i>
+      </b>
+      Yaitu sebuah jaringan yang mentransmisikan pada kecepatan 155 Mbps atau lebih.
+      ATM mentransmisikan data kedalam satu paket, sedangkan yang lain mentransfer
+      pada besar-kecilnya paket. ATM mendukung variasi media seperti video, CD-audio,
+      dan gambar. ATM bekerja pada model topologi Bintang dengan menggunakan kabel
+      fiber optik ataupun kabel twisted pair.
+    </li>
+    <h4>Kelebihan dari ATM ( Asynchronous Transfer Mode ) :</h4>
+    <ul>
+      <li>Kecepatan sampai 155 Mbps atau lebih</li>
+      <li>Dapat didukung variasi media.</li>
+      <li>Menggunakan kabel fiber optik</li>
+      <li>Dapat dipakai oleh ISP( Internet Service Providers.</li>
+    </ul>
+    <h4>Kekurangan dari ATM ( Asynchronous Transfer Mode ) :</h4>
+    <ul>
+      <li>Boros dalam penggunaan kabel dan Mahal</li>
+    </ul>
+  </ol>
+  <li style="margin-top: 2rem">
+    <h4>Topologi Physical (Fisik)</h4>
+  </li>
+  <p>
+    Topologi Physical (Fisik) adalah cara pola penataan letak yang mengacu pada
+    Fisik desain sebuah jaringan termasuk perangkat,lokasi dan instalasi kabel.
+    Berikut contoh dari topologi Fisik:
+  </p>
+  <ol>
+    <li>
+      <h4>Topologi Bus</h4>
+    </li>
+    <p>
+      Adalah topologi jaringan yang lebih sederhana. Umumnya topologi jaringan
+      ini dilakukan pada instalasi jaringan berbasis kabel coaxial. Topologi bus
+      menggunakan kabel coaxial pada sepanjang node client dan konektor. Jenis
+      konektor yang digunakan adalah BNC, Terminator, dan TBNC.
+    </p>
+    <img src={useLazyImage(topologibus)} style="width: 100%" />
+    <h4>Kelebihan Topologi Bus, diantaranya yaitu:</h4>
+    <ul>
+      <li>Penambahan client atau workstation baru mudah dilakukan.</li>
+      <li>Mudah digunakan dan sangat sederhana.</li>
+      <li>Biaya instalasi murah karena kabel yang digunakan sedikit.</li>
+    </ul>
+    <h4>Kekurangan Topologi Bus, diantaranya yaitu:</h4>
+    <ul>
+      <li>Sering terjadi tabrakan arus data.</li>
+      <li>Proses pengiriman dan penerimaan data kurang efisien.</li>
+      <li>Topologi bus yang lama sulit untuk dikembangkan.</li>
+      <li>
+        Jika ada masalah pada kabel, misalnya terputus, maka komputer
+        workstation akan terganggu.
+      </li>
+    </ul>
+    <li>
+      <h4>Topologi Ring</h4>
+    </li>
+    <p>
+      Sering disebut topologi cincin adalah jenis topologi jaringan yang
+      digunakan untuk menghubungkan sebuah komputer dengan komputer lainnya
+      dalam sebuah rangkaian yang berbentuk melingkar seperti cincin. Umumnya,
+      jenis topologi jaringan ring ini hanya menggunakan LAN card agar
+      masing-masing komputer terkoneksi
+    </p>
+    <img src={useLazyImage(topologiring)} style="width: 100%" />
+    <h4>Kelebihan Topologi Ring :</h4>
+    <ul>
+      <li>Biaya instalasinya murah.</li>
+      <li>Performa koneksi cukup baik.</li>
+      <li>Proses instalasi dan konfigurasi cukup mudah.</li>
+      <li>Implementasinya mudah dilakukan.</li>
+    </ul>
+    <h4>Kekurangan Topologi Ring :</h4>
+    <ul>
+      <li>
+        Jika terjadi masalah, troubleshooting jaringan ini terbilang rumit.
+      </li>
+      <li>Sangat rentan terjadi tabrakan arus data.</li>
+      <li>
+        Jika salah satu koneksi bermasalah koneksi pada jaringan akan terputus.
+      </li>
+    </ul>
+    <li>
+      <h4>Topologi Mesh</h4>
+    </li>
+    <p>
+      Topologi mesh adalah sebuah topologi yang bisa digunakan untuk rute yang
+      banyak. Jaringan topologi ini menggunakan kabel tunggal sehingga proses
+      pengiriman data menjadi lebih cepat tanpa melalui hub atau switch.
+    </p>
+    <img src={useLazyImage(topologimesh)} style="width: 100%" />
+    <h4>Kelebihan Topologi Mesh :</h4>
+    <ul>
+      <li>Bandwidth limitnya cukup besar.</li>
+      <li>Security data pada topologi ini sangat baik.</li>
+      <li>
+        Tidak terjadi tabrakan arus data karena jalur pengiriman data sangat
+        banyak.
+      </li>
+    </ul>
+    <h4>Kekurangan Topologi Mesh :</h4>
+    <ul>
+      <li>Kabel yang dibutuhkan jumlahnya banyak.</li>
+      <li>
+        Biaya instalasi topologi mesh sangat mahal karena menggunakan banyak
+        kabel dan Instalasinya sangat rumit.
+      </li>
+    </ul>
+    <li>
+      <h4>Topologi Star</h4>
+    </li>
+    <p>
+      Disebut juga topologi bintang adalah topologi jaringan berbentuk bintang
+      dimana umumnya menggunakan hub atau switch untuk koneksi antar client.
+      Topologi jaringan komputer ini paling sering digunakan saat ini karena
+      memiliki banyak kelebihan.
+    </p>
+    <img src={useLazyImage(topologistar)} style="width: 100%" />
+    <h4>Kelebihan Topologi Star :</h4>
+    <ul>
+      <li>
+        Jaringan topologi ini tetap berjalan baik meski salah satu komputer
+        client bermasalah.
+      </li>
+      <li>Tingkat keamanan data pada topologi ini cukup baik.</li>
+      <li>User lebih mudah mendeteksi masalah pada jaringan.</li>
+      <li>Lebih fleksibel.</li>
+    </ul>
+    <h4>Kekurangan Topologi Star :</h4>
+    <ul>
+      <li>
+        Topologi ini terhitung mahal karena menggunakan cukup banyak kabel.
+      </li>
+      <li>
+        Seluruh komputer dalam jaringan ini akan bermasalah jika hub atau switch
+        mengalami masalah.
+      </li>
+      <li>Sangat tergantung pada terminal pusat.</li>
+    </ul>
+    <li>
+      <h4>Topologi Tree</h4>
+    </li>
+    <p>
+      Topologi Tree atau topologi pohon adalah hasil penggabungan dari topologi
+      bus dan topologi star. Umumnya, topologi tree digunakan untuk interkoneksi
+      antara hirarki dengan pusat yang berbeda-beda.
+    </p>
+    <img src={useLazyImage(topologitree)} style="width: 100%" />
+    <h4>Kelebihan Topologi Tree :</h4>
+    <ul>
+      <li>
+        Dapat dan mudah dikembangkan menjadi topologi jaringan yang lebih luas.
+      </li>
+      <li>
+        Dapat dan mudah dikembangkan menjadi topologi jaringan yang lebih luas.
+      </li>
+    </ul>
+    <h4>Kekurangan Topologi Tree :</h4>
+    <ul>
+      <li>Memiliki kinerja jaringan yang lambat.</li>
+      <li>
+        Penggunaan kabel yang sangat banyak sehingga biaya instalasinya mahal.
+      </li>
+      <li>Kabel backbone merupakan sentral dari topologi ini.</li>
+      <li>
+        Bila komputer bagian atas bermasalah, maka komputer bagian bawah juga
+        akan bermasalah.
+      </li>
+    </ul>
+    <li>
+      <h4>Topologi Peer To Peer</h4>
+    </li>
+    <p>
+      Topologi jaringan yang sangat sederhana karena hanya menghubungkan 2
+      komputer. Umumnya topologi peer to peer menggunakan satu kabel saja untuk
+      menghubungkan kedua komputer agar bisa saling berbagi data.
+    </p>
+    <img src={useLazyImage(topologipeertopeer)} style="width: 100%" />
+    <h4>Kelebihan Topologi Peer To Peer :</h4>
+    <ul>
+      <li>Biaya instalasi sangat murah.</li>
+      <li>Proses instalasi mudah.</li>
+      <li>Setiap komputer bisa berperan sebagai server atau client.</li>
+    </ul>
+    <h4>Kekurangan Topologi Peer To Peer :</h4>
+    <ul>
+      <li>Sangat sulit dikembangkan.</li>
+      <li>Security dalam topologi ini sering bermasalah.</li>
+      <li>Proses troubleshooting termasuk rumit.</li>
+    </ul>
+    <li>
+      <h4>Topologi Linier</h4>
+    </li>
+    <p>
+      Sering disebut dengan topologi bus berurut. Umumnya topologi ini hanya
+      menggunakan satu kabel utama sebagai konektor masing-masing titik
+      sambungan pada setiap komputer.
+    </p>
+    <img src={useLazyImage(topologilinier)} style="width: 100%" />
+    <h4>Kelebihan Topologi Linier :</h4>
+    <ul>
+      <li>Mudah dikembangkan.</li>
+      <li>Penggunaan kabel sedikit.</li>
+      <li>Tata letak topologi linier sederhana dan mudah.</li>
+      <li>Topologi ini tidak membutuhkan kendali sentral.</li>
+    </ul>
+    <h4>Kekurangan Topologi Linier :</h4>
+    <ul>
+      <li>Kepadatan trafik data cukup tinggi.</li>
+      <li>Keamanan data tidak terjamin.</li>
+    </ul>
+    <li>
+      <h4>Topologi Hybrid</h4>
+    </li>
+    <p>
+      Topologi Hybrid adalah gabungan dari beberapa topologi yang berbeda dan
+      membentuk jaringan baru. Dengan kata lain, jika ada dua atau lebih
+      topologi yang berbeda terhubung dalam satu jaringan maka topologi jaringan
+      tersebut akan membentuk topologi hybrid.
+    </p>
+    <h4>Kelebihan Topologi Hybrid :</h4>
+    <ul>
+      <li>Bersifat fleksibel.</li>
+      <li>Penambahan koneksi lain pada topologi ini menjadi sangat mudah.</li>
+    </ul>
+    <h4>Kekurangan Topologi Hybrid :</h4>
+    <ul>
+      <li>Proses instalasi dan pengaturannya cukup rumit.</li>
+      <li>Manajemen topologi hybrid sangat sulit dilakukan.</li>
+      <li>Biaya untuk membuat topologi ini cukup mahal.</li>
+    </ul>
+  </ol>
+</ol>
+
+### Penutup
+
+<p style="text-indent: 2em">
+  Demikianlah ulasan mengenai pengertian dari topologi jaringan. Kamu bisa
+  menggunakan topologi sesuai kebutuhan dan biaya yang dimiliki. Topologi
+  jaringan merupakan metode untuk menghubungkan dua atau lebih komputer. Metode
+  ini bisa dilakukan dengan berbagai cara, yang masing-masingnya memiliki
+  kelebihan dan kekurangan.
+</p>
+<p style="text-indent: 2em">
+  Biaya yang dibutuhkan dalam proses instalasi topologi juga bervariatif,
+  tergantung pada jenis topologi apa yang digunakan. Meski begitu, biaya yang
+  dikeluarkan tetap harus dicatat secara terperinci dalam pembukuan jika kalian
+  adalah seorang pegiat usaha.
+</p>
+
+<Referensi>
+  <p style="text-align: start;">
+    <i>
+      Kenali Apa Itu Topologi Jaringan dan Apa Saja Jenisnya. Ayo Simak Lebih
+      Lanjut.
+    </i>
+    (2021, May 10). Kenali Apa Itu Topologi Jaringan dan Apa Saja Jenisnya. Ayo Simak
+    Lebih Lanjut | Dinas Komunikasi dan Informatika - Kabupaten Kuburaya. Retrieved
+    September 19, 2022, from <a href="https://diskominfo.kuburayakab.go.id/read/4/kenali-apa-itu-topologi-jaringan-dan-apa-saja-jenisnya-ayo-simak-lebih-lanjut">
+      https://diskominfo.kuburayakab.go.id/read/4/kenali-apa-itu-topologi-jaringan-dan-apa-saja-jenisnya-ayo-simak-lebih-lanjut
+    </a>
+    <br />
+    <br />
+    Nugroho, F. T. (2022, February 2).{" "}
+    <i>
+      Macam-Macam Topologi Jaringan Beserta Penjelasannya, Ketahui Kelebihan dan
+      Kekurangannya.
+    </i>
+    Bola.com. Retrieved September 19, 2022, from
+    <a href="https://www.bola.com/ragam/read/4875527/macam-macam-topologi-jaringan-beserta-penjelasannya-ketahui-kelebihan-dan-kekurangannya">
+      https://www.bola.com/ragam/read/4875527/macam-macam-topologi-jaringan-beserta-penjelasannya-ketahui-kelebihan-dan-kekurangannya
+    </a>
+    <br />
+    <br />
+    <i>Topologi Fisik Jaringan - Rizal's Sites.</i> (n.d.). Google Sites. Retrieved
+    September 20, 2022, from <a href="https://sites.google.com/a/student.unsika.ac.id/rizal-sites/semester-1/tugas-pti-8/topologi-fisik">
+      https://sites.google.com/a/student.unsika.ac.id/rizal-sites/semester-1/tugas-pti-8/topologi-fisik
+    </a>
+    <br />
+    <br />
+    <i>Topologi jaringan.</i> (n.d.). Wikipedia. Retrieved September 20, 2022,
+    from{" "}
+    <a href="https://id.wikipedia.org/wiki/Topologi_jaringan">
+      https://id.wikipedia.org/wiki/Topologi_jaringan
+    </a>
+    <br />
+    <br />
+    <i>Topologi Jaringan : Pengertian, Macam, Fungsi & Tujuannya.</i> (2021, November
+    6). Materi.Co.ID. Retrieved September 20, 2022, from <a href="https://materi.co.id/topologi-jaringan/">https://materi.co.id/topologi-jaringan/</a>
+  </p>
+</Referensi>
