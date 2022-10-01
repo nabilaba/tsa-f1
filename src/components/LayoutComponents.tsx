@@ -91,7 +91,7 @@ export const SectionHeading = ({
   ...otherProps
 }: PropsWithChildren<ContainerProps>) => (
   <Heading
-    size="3xl"
+    fontSize={{ base: "3xl", xl: "5xl" }}
     textAlign="center"
     marginBottom={10}
     display="inline-block"
