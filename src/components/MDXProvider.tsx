@@ -40,8 +40,10 @@ const mdComponents = {
   img: (props: ComponentProps) => (
     <Image
       as="img"
+      my="2"
       border="2px solid var(--theme-pink)"
       borderRadius={8}
+      width="full"
       {...props}
     />
   ),
@@ -52,22 +54,21 @@ const mdComponents = {
     <Heading as="h2" size="xl" mt={5} {...props} scrollMarginTop="100px" />
   ),
   h3: (props: ComponentProps) => (
-    <Heading as="h3" size="lg" mt={5} {...props} scrollMarginTop="100px" />
+    <Heading as="h3" size="lg" mt={3} {...props} scrollMarginTop="100px" />
   ),
   h4: (props: ComponentProps) => (
-    <Heading as="h4" size="md" mt={5} {...props} scrollMarginTop="100px" />
+    <Heading as="h4" size="md" mt={3} {...props} scrollMarginTop="100px" />
   ),
   h5: (props: ComponentProps) => (
-    <Heading as="h5" size="sm" mt={5} {...props} scrollMarginTop="100px" />
+    <Heading as="h5" size="sm" mt={3} {...props} scrollMarginTop="100px" />
   ),
   h6: (props: ComponentProps) => (
-    <Heading as="h6" size="xs" mt={5} {...props} scrollMarginTop="100px" />
+    <Heading as="h6" size="xs" mt={3} {...props} scrollMarginTop="100px" />
   ),
   p: (props: ComponentProps) => (
     <Text
       as="p"
-      mb={4}
-      fontSize="xl"
+      my={3}
       textAlign="justify"
       wordBreak="break-word"
       whiteSpace="pre-wrap"
@@ -96,7 +97,13 @@ const mdComponents = {
   ol: (props: ComponentProps) => (
     <List ml={10} as="ol" styleType="decimal" fontSize="xl" {...props} />
   ),
-  li: (props: ComponentProps) => <ListItem {...props} />,
+  li: (props: ComponentProps) => (
+    <ListItem
+      my="3"
+      textAlign="justify"
+      {...props}
+    />
+  ),
   hr: (props: ComponentProps) => <Divider my={8} {...props} />,
   note: (props: ComponentProps) => (
     <Alert status="info" variant="left-accent" {...props}>

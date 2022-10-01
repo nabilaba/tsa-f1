@@ -36,7 +36,7 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
       <Seo title={title} />
       <Box>
         <BlogContainer ref={target}>
-          <Flex direction="column">
+          <Flex direction="column" fontSize={{ base: "lg", md: "xl" }}>
             <SectionHeading marginBottom={0}>{title}</SectionHeading>
 
             <Flex justifyContent="space-evenly" color="gray.300" my="5">
