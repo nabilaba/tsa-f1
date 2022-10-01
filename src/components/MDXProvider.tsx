@@ -33,6 +33,7 @@ import {
 
 type ComponentProps = {
   children: ReactNode;
+  src: string;
   [property: string]: unknown; // extra Chakra UI properties
 };
 
@@ -44,6 +45,8 @@ const mdComponents = {
       border="2px solid var(--theme-pink)"
       borderRadius={8}
       width="full"
+      cursor="pointer"
+      onClick={() => window.open(props.src)}
       {...props}
     />
   ),
