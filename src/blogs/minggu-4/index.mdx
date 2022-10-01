@@ -1,0 +1,472 @@
+---
+title: "Analisis Insiden Serangan SQL Injection di Indonesia"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    {
+      name: "Nabil Aziz Bima Anggita",
+      as: "Scrum Master / Pembuat Laporan / Publisher"
+    },
+    { name: "Talita Listra", as: "Scrum Master / Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
+    { name: "Muhammad Zainur Rifqi Al Munawwar", as: "Pembuat Laporan" }
+  ]
+date: 2022-09-30
+---
+
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+import thumbnailminggu4 from "./assets/thumbnailminggu4.jpg";
+import kpu2004 from "./assets/kpu2004.png";
+import tokopedia2020 from "./assets/tokopedia2020.png";
+import polri from "./assets/polri.jpg";
+
+<img src={useLazyImage(thumbnailminggu4)} />
+
+<p>
+  Data merupakan salah satu komponen terpenting dari sistem informasi. Aplikasi
+  web yang didukung database digunakan oleh organisasi untuk mendapatkan data
+  dari pelanggan. SQL sendiri adalah singkatan dari Structured Query Language.
+  Ini digunakan untuk mengambil dan memanipulasi data dalam database. Namun
+  karena hal ini juga peretas menemukan jenis serangan baru dan salah satu jenis
+  serangannya adalah SQL Injection.
+</p>
+<p>
+  Serangan SQL injection adalah salah satu cyber crime yang menjadi ancaman
+  sangat serius pada keamanan sebuah website. Bagaimana tidak, frekuensi kasus
+  SQL injection berada di posisi ketiga dengan risiko serangan paling besar,
+  berdasarkan data dari niagahoster.
+</p>
+<p>
+  Bayangkan, serangan SQL injection mencakup pencurian dan manipulasi database,
+  termasuk email, password, data pribadi, bahkan hingga aset finansial Anda.
+  Sangat berbahaya, bukan?
+</p>
+<p>
+  Kalian mungkin sedikit kurang familiar dengan apa itu SQL Injection (SQLI)
+  atau cara kerjanya, tetapi kalian pasti tahu tentang korbannya. Target, Yahoo,
+  Zappos, Equifax, Epic Games, TalkTalk, LinkedIn, dan Sony Pictures. Semua
+  perusahaan ini diretas oleh penjahat dunia maya menggunakan SQL Injection.
+  Seperti yang dikatakan OWASP, SQL Injection telah menjadi masalah umum dengan
+  situs web berbasis database. Cacat ini mudah dideteksi, dan dengan mudah
+  dieksploitasi.
+</p>
+<p>
+  Namun, apa itu SQL injection sebenarnya? Bagaimana cara kerja serangan itu
+  dilakukan? Dan, adakah cara mencegah SQL Injection? Kali ini, kami akan
+  membahas apa itu SQL injection secara lengkap, serta cara mudah untuk
+  mencegahnya. Silahkan disimak!
+</p>
+
+## Apa Itu SQL Injection?
+
+<p>
+  SQL injection merupakan salah satu jenis injeksi berupa perintah SQL yang
+  diinjeksikan ke dalam data-plane input untuk mempengaruhi eksekusi SQL command
+  yang telah ditentukan. Exploitasi SQL injection yang berhasil dapat melakukan
+  pembacaan data sensitif dari database, mengubah data pada database,
+  menjalankan operasi administrasi pada database, dan dalam beberapa kasus
+  mengeluarkan perintah ke sistem operasi.
+</p>
+<p>
+  Dalam situasi ini, penyerang dapat meningkatkan serangan SQL Injection untuk
+  mengganggu server yang mendasarinya atau infrastruktur back-end lainnya, atau
+  melakukan serangan denial-of-service.
+</p>
+<p>
+  Umumnya, hacker menggunakan perintah atau query SQL dengan tools tertentu
+  untuk mengakses database. Injeksi kode yang dilakukan membuat mereka dapat
+  masuk tanpa proses otentikasi. Setelah berhasil, hacker bebas untuk
+  menambahkan, menghapus, serta mengubah data-data pada website.
+</p>
+<p>
+  Serangan SQL injection ini biasa terjadi pada situs web dan aplikasi web yang
+  dirancang dengan buruk atau bisa dikatakan dapat ditargetkan ke website apapun
+  yang menggunakan SQL database, seperti MySQL, Oracle, SQL Server, dan
+  sebagainya.
+</p>
+
+## Beberapa Insiden SQL Injection di Indonesia
+
+<ol>
+  <li>
+    <h4>Perubahan data pada Situs KPU (2004)</h4>
+  </li>
+  <p>
+    Serangan Xnuxer sukses dan memungkinkannya melakukan SQL Injection
+    (manipulasi query SQL). Akibatnya, hacker asal Jogja ini bisa memodifikasi
+    halaman web dan mengubah informasi pada situs KPU.
+  </p>
+  <p>
+    Nama partai, misalnya, berubah menjadi Partai Si Yoyo, Partai Kolor Ijo,
+    Partai Dibenerin Dulu Webnya, dan sebagainya. Bahkan, Xnuxer juga sempat
+    berniat mengubah hasil perolehan suara namun gagal.
+  </p>
+  <p>
+    “… Saya yakin sebenarnya KPU sudah banyak mendapatkan informasi mengenai
+    celah-celah tersebut. Meski dari celah yang diinformasikan masih banyak
+    celah lain yang tidak diketahui pada saat itu,” kata Dani setelah ditangkap
+    polisi.
+  </p>
+  <img src={useLazyImage(kpu2004)} />
+  <p>
+    Setelah insiden ini, situs KPU juga beberapa kali masih kena hack. Coba
+    bayangkan kericuhan yang mungkin terjadi jika situs pemerintahan
+    terus-terusan dimanipulasi sehingga menyebarkan misinformasi di masyarakat.
+    Sangat berbahaya, bukan?
+  </p>
+  <li style="margin-top: 2rem">
+    <h4>Data Pengguna Tokopedia Bocor ke Dark Web (2020)</h4>
+  </li>
+  <p>
+    Di tahun 2020, kabar tidak sedap menggoncang Tokopedia. Pasalnya, 91 juta
+    data pengguna dan lebih dari tujuh juta data merchant di e-commerce ini
+    dibocorkan oleh hacker bernama ShinyHunters.
+  </p>
+  <p>
+    Masih belum jelas metode apa yang ShinyHunters gunakan. Menurut Ruby
+    Alamsyah, pakar keamanan cyber, kemungkinan ShinyHunters memanfaatkan celah
+    sistem cloud di Tokopedia.
+  </p>
+  <p>
+    Selain itu, bisa juga hacker kelas kakap ini melakukan SQL Injection ataupun
+    teknik yang lebih canggih lainnya.
+  </p>
+  <p>
+    Gara-gara ulah ShinyHunters, data personal pengguna Tokopedia (email, nama,
+    alamat, tanggal lahir, jenis kelamin, nomor telepon dan password yang
+    terenkripsi) bocor ke publik.
+  </p>
+  <p>
+    Bahkan, informasi tersebut dijual ke dunia maya dengan harga sekitar Rp 70
+    juta.
+  </p>
+  <img src={useLazyImage(tokopedia2020)} />
+  <p>
+    Tokopedia pun menenangkan penggunanya dengan memastikan data sensitif
+    seperti password aman karena terenkripsi. Artinya, informasi sudah diubah ke
+    kode rahasia sehingga tidak bisa dibaca hacker.
+  </p>
+  <p>
+    Sayangnya, hacker juga tidak kalah strategi. Penjahat cyber ini membolehkan
+    oknum tertentu mengunduh data ilegal ini secara gratis.
+  </p>
+  <p>
+    “…pelaku mau melakukan share gratis beberapa juta akun untuk membuat semacam
+    sandiwara siapa yang berhasil membuka kode acak pada password,” duga ahli
+    keamanan cyber, Pratama Persadha.
+  </p>
+  <p>
+    Tentunya, insiden ini berpotensi membawa kerugian kepada pengguna Tokopedia.
+    Sebab, hacker bisa memanfaatkan profil pengguna untuk scam (penipuan online)
+    dan phising (mengambil alih akun atau sistem). Mengirim email penipuan,
+    misalnya. Tokopedia pun segera menginvestigasi kasus dan menyarankan
+    penggunanya segera mengganti password secara berkala.
+  </p>
+  <li style="margin-top: 2rem">
+    <h4>Pembobolan database Polri</h4>
+    <p>
+      Polri juga pernah ikut menjadi korban serangan hacker. Di November 2021,
+      hacker dengan nama akun @son1x666 mengklaim telah meretas database milik
+      Polri melalui akun Twitternya.
+    </p>
+    <img src={useLazyImage(polri)} />
+    <p>
+      Dalam cuitannya tersebut, ada 28.000 informasi log in dan data pribadi
+      yang dicuri. Selain itu ada tiga link berisi sampel data yang diduga
+      berasal dari database Polri berisi informasi nama, tempat tanggal lahir,
+      nomor registrasi pokok, alamat, golongan darah, satuan kerja, suku, alamat
+      email, pangkat, hingga pelanggaran anggota.
+    </p>
+    <p>
+      Menanggapi hal ini, Polri telah memastikan data internal dan sistem
+      keamanan Polri tetap aman. Menurut investigasi, peretasan ini dilakukan
+      oleh hacker yang dikenal seringkali menyerang situs pemerintah di dunia
+      untuk menunjukkan eksistensinya dan bentuk protes ketidakadilan pemerintah
+      terhadap rakyat.
+    </p>
+  </li>
+</ol>
+
+## Bagaimana sih cara kerjanya SQL Injection?
+
+<p>
+  SQL Injection adalah perhatian utama saat mengembangkan aplikasi Web. Ini
+  terjadi ketika aplikasi menerima input pengguna yang berbahaya dan kemudian
+  menggunakannya sebagai bagian dari pernyataan SQL untuk meminta database
+  backend.
+</p>
+<p style="margin-bottom: 0;">
+  Untuk cara kerja serangan SQL injection sendiri terjadi dalam tiga tahapan,
+  yaitu:
+</p>
+<ol>
+  <li>
+    <h4>Hacker mengincar celah keamanan database</h4>
+  </li>
+  <p>
+    Pertama-tama, penyerang akan mencari celah keamanan pada sebuah website atau
+    aplikasi yang menjadi sasaran. Biasanya, celah keamanan terhadap SQL
+    injection ada pada form loginnya.
+  </p>
+  <p>
+    Selanjutnya, penyerang akan menginput kode melalui form login dengan query
+    SQL yang akan diproses database sebagai perintah.
+  </p>
+  <p>
+    Sebagai contoh, seorang pengguna memiliki username budikeren dan password
+    budi123 di sebuah website. Ketika pengguna ini melakukan login, website akan
+    melakukan validasi dengan query SQL berikut:
+  </p>
+  <code>
+    SELECT * FROM users WHERE username = 'budikeren' AND password = 'budi123'
+  </code>
+  <p>
+    Jika query yang dikirim memberikan detil login pengguna, maka loginnya
+    berhasil. Jika tidak, maka loginnya ditolak atau gagal.
+  </p>
+  <p>
+    Yang terjadi pada sebuah serangan SQL injection adalah penyerang dapat
+    melakukan login tanpa menggunakan password dengan SQL Comment Sequence
+    menggunakan simbol double minus (–).
+  </p>
+  <p>Query yang terkirim pun berubah seperti berikut:</p>
+  <code>SELECT * FROM users WHERE username = ‘budi’--’ AND password = ‘ ’</code>
+  <li>
+    <h4>Proses validasi atas SQL Query yang digunakan</h4>
+  </li>
+  <p>
+    Query SQL di atas membuat database melakukan proses validasi perintah.
+    Hasilnya, database akan memberikan informasi login dari pengguna yang
+    memiliki username budikeren tanpa mengecek passwordnya. Kemudian, sistem
+    akan membiarkan penyerang login sebagai budi.
+  </p>
+  <li>
+    <h4>Database berhasil diakses</h4>
+  </li>
+  <p>
+    Penyerang berhasil masuk ke website tanpa verifikasi. Yang paling berbahaya,
+    penyerang bisa mengubah rolenya menjadi administrator website. Kalau sudah
+    begitu, penyerang bisa dengan mudah mengakses, memodifikasi, dan bahkan
+    menghapus semua data pribadi pengguna website tersebut.
+  </p>
+  <p>Wah, berbahaya juga ya kalau itu sampai terjadi? Benar sekali</p>
+</ol>
+
+## Lalu dampak berbahaya dari sebuah serangan SQL injection apa saja?
+
+<ol>
+  <li>
+    <h4>Verifikasi Login bisa Ditembus</h4>
+  </li>
+  <p>
+    Dengan SQL injection, penyerang dapat masuk ke website/aplikasi tanpa
+    username dan password yang valid. Artinya, peran verifikasi pengguna untuk
+    memfilter akses website bisa mudah dilewati. Kondisi ini tentu sangat
+    membahayakan website yang menjadi sasarannya.
+  </p>
+  <li>
+    <h4>Privasi Pengguna Website Terancam</h4>
+  </li>
+  <p>
+    Tak hanya bisa mengakses website tanpa login, pelaku SQL injection juga
+    dapat melakukan login sebagai pengguna lain, tergantung teknik yang
+    digunakan. <br />
+    Dengan kondisi ini, hacker bisa mendapatkan informasi pengguna dan menyalahgunakannya
+    untuk aktivitas ilegal. Termasuk, penipuan atas nama pengguna tersebut.
+  </p>
+  <li>
+    <h4>Data Website Dicuri</h4>
+  </li>
+  <p>
+    Aksi SQL injection dengan query SELECT dan OUTPUT, membuat penyerang bisa
+    mendapatkan akses atas semua data di tabel database targetnya. Misalnya,
+    username, password, pin rekening bank, dan kredensial lainnya. <br />
+    Dengan akses terhadap informasi sensitif di atas, data pelanggan, data pribadi,
+    serta dokumen rahasia perusahaan pun dapat dicuri.
+  </p>
+  <li>
+    <h4>Database Dimodifikasi</h4>
+  </li>
+  <p>
+    Teknik SQL injection juga dapat digunakan untuk mengubah serta menambah data
+    baru pada database. Hal ini sangat berbahaya kalau terjadi di website yang
+    memproses transaksi keuangan seperti bank atau toko online. <br />
+    Hacker bisa saja mengubah data transaksi nasabah, bahkan memindahkan isi rekening
+    nasabah ke rekening lain milik hacker tersebut.
+  </p>
+  <li>
+    <h4>Riwayat Data dari Database Dihapus</h4>
+  </li>
+  <p>
+    Tak ingin aksinya dilacak, penyerang dengan akses administrator bisa
+    menghapus keseluruhan data pada database. <br />
+    Meskipun sebelumnya database sudah dicadangkan di cloud, serangan ini tetap berbahaya.
+    Sebab, selama backup database belum dipulihkan, website atau aplikasi tidak dapat
+    berjalan.
+  </p>
+  <li>
+    <h4>OS Command Execution dan Pembobolan Firewall</h4>
+  </li>
+  <p>
+    Beberapa server database memungkinkan akses terhadap operating system (OS).
+    Jika serangan SQL injection berhasil mengakses OS, artinya hacker mampu
+    menyerang jaringan internal yang ada di balik firewall dengan OS Command
+    Execution.
+  </p>
+  <p>
+    Singkatnya, SQL injection tak hanya berbahaya sebagai serangan tunggal, tapi
+    juga membuka kemungkinan serangan berbahaya lainnya.
+  </p>
+</ol>
+
+## Lalu bagaimana cara mencegah insiden serangan SQL Injection di Indonesia tersebut terulang kembali?
+
+<ol>
+  <li>
+    <h4>Mengatur Input Validation</h4>
+  </li>
+  <p>
+    Proses ini bertujuan untuk memverifikasi jenis input yang dikirimkan oleh
+    pengguna diperbolehkan atau tidak. <br />
+    Berikut bagaimana melakukan validasi tablename:
+  </p>
+  <code style="white-space: pre-wrap;">
+    {`switch ($tableName) {
+  case 'fooTable': return true;
+  case 'barTable': return true;
+  default: return new BadMessageException('unexpected value provided as table name');
+}`}
+  </code>
+  <p>
+    Untuk <i>drop-down list</i>, sangat mudah untuk memvalidasi data. Misalnya,
+    jika kamu ingin pengguna memilih rating dari 1 hingga 5, ubah kode PHP
+    menjadi seperti ini:
+  </p>
+  <code style="white-space: pre-wrap;">
+    {`<?php
+if(isset($_POST["selRating"]))
+{
+  $number = $_POST["selRating"];
+  if((is_numeric($number)) && ($number > 0) && ($number < 6))
+  {
+    echo "Selected rating: " . $number;
+  }
+  else
+    echo "The rating has to be a number between 1 and 5!";
+?>
+}`}
+  </code>
+  <li>
+    <h4>Mengamankan DataBase yang Digunakan</h4>
+  </li>
+  <p>
+    Dengan memisahkan database dan username password, maka penyerang membutuhkan
+    usaha dan percobaan lebih karena harus memahami struktur database aplikasi.{" "}
+    <br />
+    Beberapa cara yang dapat digunakan untuk mengamankan database :
+  </p>
+  <ol>
+    <li>
+      Definisikan dengan baik hak akses dari pengguna yang mengakses database
+      serta berikan hak akses terhadap pengguna sesuai dengan hak akses yang
+      diperlukannya (least privileged).
+    </li>
+    <li>
+      Menggunakan teknik enkripsi untuk mengamankan data yang tersimpan didalam
+      database.
+    </li>
+    <li>Non aktifkan akses dari publik untuk mengakses database.</li>
+    <li>
+      Lakukan penggantian password secara berkala untuk akun yang digunakan
+      untuk mengakses database.
+    </li>
+  </ol>
+  <li>
+    <h4>Menonaktifkan Informasi Pesan Kesalahan Aplikasi (Error)</h4>
+  </li>
+  <p>
+    Salah satu kebiasaan yang kerap kali dilakukan oleh pengembang aplikasi pada
+    saat pengembangan adalah mengaktifkan mode debug guna memudahkan pengembang
+    dalam menemukan kesalahan dalam aplikasi yang dikembangkannya. Namun kerap
+    kali pengembang lupa untuk menonaktifkan mode debug pada saat aplikasi
+    memasuki masa penggunaan (production). Sehingga hal ini kerap kali menjadi
+    keuntungan bagi penyerang dengan teknik SQL Injection untuk mengetahui
+    parameter URL mana yang rentan terhadap serangan. Untuk menghindari hal ini,
+    pengembang cukup menonaktifkan mode debug pada aplikasi untuk mencegah pesan
+    error yang ditampilkan oleh pihak penyerang.
+  </p>
+  <li>
+    <h4>Lakukan Pengujian Keamanan Aplikasi Secara Berkala</h4>
+  </li>
+  <p>
+    Hal ini bertujuan agar celah keamanan terkait aplikasi yang digunakan dapat
+    diketahui secara dini, dengan demikian langkah preventif ataupun perbaikan
+    terhadap celah keamanan tersebut dapat segera dilakukan.
+  </p>
+  <li>
+    <h4>Menggunakan Perangkat Keamanan Web Application Firewall</h4>
+  </li>
+  <p>
+    Hal ini bertujuan untuk mendeteksi dan memblokir serangan SQL Injection
+    berjalan pada aplikasi.
+  </p>
+</ol>
+
+<Referensi>
+  <p style="text-align: start;">
+    Alizanovic, V. (2022, February 11).{" "}
+    <i>Apa Itu SQL Injection? Ini Panduan Lengkap Cara Mencegahnya!</i>
+    Niagahoster. Retrieved September 26, 2022, from <a href="https://www.niagahoster.co.id/blog/apa-itu-sql-injection/">
+      https://www.niagahoster.co.id/blog/apa-itu-sql-injection/
+    </a>
+    <br />
+    <br />
+    Mochamadnurulhuda. (2021, October 4).{" "}
+    <i>SQL Injection di Indonesia dan Beberapa Langkah Pencegahannya.</i>
+    Medium. Retrieved September 27, 2022, from <a href="https://medium.com/@mochamadnurulhuda16_70407/sql-injection-di-indonesia-dan-beberapa-langkah-pencegahannya-5de8b146f7f8">
+      https://medium.com/@mochamadnurulhuda16_70407/sql-injection-di-indonesia-dan-beberapa-langkah-pencegahannya-5de8b146f7f8
+    </a>
+    <br />
+    <br />
+    Risyan, R. (2020, November 12).{" "}
+    <i>Apa Itu SQL Injection: Cara Kerja, Contoh, Dan Jenis-Jenis.</i> Monitor
+    Teknologi. Retrieved September 27, 2022, from{" "}
+    <a href="https://www.monitorteknologi.com/apa-itu-sql-injection/">
+      https://www.monitorteknologi.com/apa-itu-sql-injection/
+    </a>
+    <br />
+    <br />
+    Sandy, O. P. (2022, March 31). <i>
+      Serangan SQL Injection Jadi Aduan Siber Tertinggi Selama 2021.
+    </i> Cyberthreat.id. Retrieved September 27, 2022, from <a href="https://cyberthreat.id/read/13925/Serangan-SQL-Injection-Jadi-Aduan-Siber-Tertinggi-Selama-2021">
+      https://cyberthreat.id/read/13925/Serangan-SQL-Injection-Jadi-Aduan-Siber-Tertinggi-Selama-2021
+    </a>
+    <br />
+    <br />
+    Security Advisory. (2019, September 18).{" "}
+    <i>MENGENAL SQL INJECTION DAN CARA MENCEGAHNYA.</i> Badan Siber Dan Sandi
+    Negara. Retrieved September 27, 2022, from{" "}
+    <a href="https://bssn.go.id/mengenal-sql-injection-dan-cara-mencegahnya/">
+      https://bssn.go.id/mengenal-sql-injection-dan-cara-mencegahnya/
+    </a>
+    <br />
+    <br />
+    Shinta, A. (2022, July 28). <i>
+      Apa itu SQL Injection dan Bagaimana Cara Mencegahnya.
+    </i> Dewaweb. Retrieved September 27, 2022, from <a href="https://www.dewaweb.com/blog/apa-itu-sql-injection/">
+      https://www.dewaweb.com/blog/apa-itu-sql-injection/
+    </a>
+    <br />
+    <br />
+    Trivusi. (2022, September 21).{" "}
+    <i>
+      7 Jenis Serangan pada Jaringan Komputer dan Langkah Pencegahannya.
+    </i>{" "}
+    Trivusi. Retrieved September 26, 2022, from{" "}
+    <a href="https://www.trivusi.web.id/2022/08/serangan-jaringan.html">
+      https://www.trivusi.web.id/2022/08/serangan-jaringan.html
+    </a>
+  </p>
+</Referensi>
