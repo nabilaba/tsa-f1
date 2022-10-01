@@ -45,11 +45,9 @@ export const HomeContainer = ({
   return (
     <Flex
       flexDirection="column"
-      margin="0 auto 8rem"
-      minH="80vh"
+      marginX="auto"
+      minH={{ base: "auto", md: "80vh" }}
       maxH="100%"
-      minW="70vw"
-      maxW={{ base: "95vw", md: "75vw" }}
       padding={{ base: 5, md: 10 }}
       {...otherProps}
     >

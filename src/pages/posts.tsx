@@ -42,8 +42,8 @@ const BlogList = () => {
         />
 
         <Flex flexDirection="column" justifyContent="space-evenly">
-          {blogsToShow &&
-            blogsToShow.map(({ node }) => (
+        {blogsToShow &&
+            blogsToShow.map(({ node }, index) => (
               <LinkBox
                 key={node.id}
                 marginY={5}
@@ -53,12 +53,12 @@ const BlogList = () => {
                 }}
               >
                 <LinkOverlay as={GatsbyLink} to={node.fields.slug}>
-                  <Heading>{node.frontmatter.title}</Heading>
+                  <Heading textAlign={"justify"} fontSize={{base: "2xl", lg: "4xl"}}>{node.frontmatter.title}</Heading>
                 </LinkOverlay>
                 <Text color="gray.300" fontSize="sm">
                   {node.frontmatter.date} - {node.fields.readingTime.text}
                 </Text>
-                <Text color="gray.300" fontStyle="italic" marginTop={2}>
+                <Text textAlign={"justify"} color="gray.300" fontStyle="italic" marginTop={2}>
                   {node.excerpt}
                 </Text>
               </LinkBox>

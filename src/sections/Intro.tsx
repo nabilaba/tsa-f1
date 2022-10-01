@@ -1,7 +1,5 @@
 import React from "react";
-import { Button, Heading, Icon, Link, SlideFade, Text } from "@chakra-ui/react";
-import { VscGithubInverted } from "react-icons/vsc";
-
+import { Heading, SlideFade } from "@chakra-ui/react";
 import { HomeContainer } from "../components/LayoutComponents";
 
 const Intro = () => {
@@ -26,17 +24,11 @@ const Intro = () => {
           Group 1<br />
           From Class F
         </Heading>
-        <Heading size="xl" marginBottom={16}>
+        <Heading size="xl" marginBottom={8}>
           In Program Cyber Security Analyst
           <br />
           At DTS Talent Scouting Academy (TSA) Batch 2
         </Heading>
-
-        {/* <Link href="https://github.com/1Gokul" target="_blank" rel="noreferrer">
-          <Button aria-label="Send Email" p={10} fontSize="2xl">
-            <Icon as={VscGithubInverted} marginRight={4} /> My GitHub
-          </Button>
-        </Link> */}
       </SlideFade>
     </HomeContainer>
   );
