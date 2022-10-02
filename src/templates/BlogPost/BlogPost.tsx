@@ -39,7 +39,12 @@ const BlogPost = ({ data, pageContext }: BlogPostProps) => {
           <Flex direction="column" fontSize={{ base: "lg", md: "xl" }}>
             <SectionHeading marginBottom={0}>{title}</SectionHeading>
 
-            <Flex justifyContent="space-evenly" color="gray.300" my="5">
+            <Flex
+              justifyContent="space-evenly"
+              color="gray.300"
+              my="5"
+              fontSize={{ base: "md", md: "lg" }}
+            >
               <Flex alignItems="center">
                 <Icon as={HiCalendar} marginRight={2} />
                 {date}
@@ -115,7 +120,7 @@ export const query = graphql`
           name
           as
         }
-        date(formatString: "DD MMMM, YYYY")
+        date(formatString: "dddd, DD MMMM YYYY", locale: "id-ID")
       }
       headings {
         value

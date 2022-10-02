@@ -12,7 +12,7 @@ export const useBlogListQuery = () => {
             excerpt(pruneLength: 250)
             frontmatter {
               title
-              date(formatString: "DD MMMM, YYYY")
+              date(formatString: "dddd, DD MMMM YYYY", locale: "id-ID")
             }
             fields {
               slug
