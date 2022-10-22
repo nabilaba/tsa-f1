@@ -1,6 +1,6 @@
-import { Box, Flex, Heading, IconButton, Text } from "@chakra-ui/react";
+import { Link, Box, Flex, Heading, IconButton, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Link } from "gatsby";
+import { Link as ScrollLink } from "react-scroll";
 import React, { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import {
@@ -20,6 +20,7 @@ const TableOfContents = ({ headings }: { headings: BlogPostHeading[] }) => {
       (heading.url = heading.value
         .toLowerCase()
         .replace("()", "")
+        .replace("?", "")
         .split(" ")
         .join("-"))
   );
@@ -56,7 +57,14 @@ const DesktopTOC = ({ headings }: { headings: BlogPostHeading[] }) => (
           borderBottom: "2px dotted"
         }}
       >
-        <Link to={`#${heading.url}`}>
+        <Link
+          as={ScrollLink}
+          to={`${heading.url}`}
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
           <Text padding={3}>{heading.value}</Text>
         </Link>
       </Box>
@@ -122,7 +130,15 @@ const MobileTOC = ({ headings }: { headings: BlogPostHeading[] }) => {
             padding={3}
             variants={headingLinkVariants}
           >
-            <Link onClick={() => setVisible(!visible)} to={`#${heading.url}`}>
+            <Link
+              as={ScrollLink}
+              onClick={() => setVisible(!visible)}
+              to={`${heading.url}`}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+            >
               {heading.value}
             </Link>
           </MotionFlex>
