@@ -1,0 +1,329 @@
+---
+title: "Network Intrusion Detection System"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    { name: "Talita Listra", as: "Scrum Master / Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
+    { name: "Muhammad Zainur Rifqi Al Munawwar", as: "Pembuat Laporan" },
+    { name: "Nabil Aziz Bima Anggita", as: "Publisher" }
+  ]
+date: 2022-10-28
+---
+
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+import thumbnailminggu8 from "./assets/thumbnailminggu8.png";
+
+<img src={useLazyImage(thumbnailminggu8)} />
+
+<p>
+  Sistem deteksi intrusi berbasis jaringan (NIDS) adalah perangkat yang
+  ditempatkan dalam jaringan dan secara pasif memeriksa lalu lintas yang
+  melintasi perangkat tersebut. NIDS dapat berupa sistem berbasis perangkat
+  keras atau perangkat lunak dan, tergantung pada produsen sistem. Perangkat
+  NIDS dapat diimplementasikan ke berbagai media jaringan seperti Ethernet,
+  FDDI, dan lainnya. Seringkali, NIDS memiliki dua <i>interface</i> jaringan.
+  Satu digunakan untuk mendengarkan percakapan jaringan dalam mode{" "}
+  <i>promiscuous</i> dan yang lainnya digunakan untuk kontrol dan pelaporan.
+</p>
+<p>
+  Dengan munculnya switching, yang mengisolasi percakapan unicast ke port switch
+  masuk dan keluar, vendor infrastruktur jaringan telah merancang teknik
+  <i>mirroring</i> port untuk mereplikasi/menyalin semua lalu lintas jaringan ke
+  NIDS. Ada cara lain untuk memasok lalu lintas ke IDS seperti <i>
+    network tapping
+  </i>. Cisco menggunakan fungsionalitas <i>Switched Port Analyzer</i> (SPAN) untuk
+  memfasilitasi kemampuan penyalinan pada perangkat jaringan dan di beberapa peralatan
+  jaringan menyertakan komponen NIDS langsung di dalam switch.
+</p>
+
+## Tujuan NIDS
+
+<p>
+  <i>Firewall</i> menjadi sangat efektif dalam memblokir upaya koneksi masuk.
+  Perangkat lunak antivirus telah berhasil mengidentifikasi infeksi yang dibawa
+  melalui penyimpanan data dan email. Ketika metode serangan yang digunakan
+  telah mampu diblokir, peretas beralih ke strategi serangan seperti serangan{" "}
+  <i>Distributed Denial of Service</i> (DDoS).Beberapa alasan untuk memperoleh
+  dan menggunakan IDS (<i>Intrusion Detection System</i>) diantaranya adalah:
+</p>
+<ol>
+  <li>
+    Mencegah resiko keamanan yang terus meningkat, karena banyak ditemukan
+    kegiatan ilegal yang diperbuat oleh orang-orang yang tidak bertanggung jawab
+    dan hukuman yang diberikan atas kegiatan tersebut.
+  </li>
+  <li>
+    Mendeteksi serangan dan pelanggaran keamanan sistem jaringan yang tidak bisa
+    dicegah oleh sistem umum yang telah diterapkan seperti <i>firewall</i>,
+    sehingga banyak menyebabkan adanya begitu banyak lubang keamanan, seperti:
+  </li>
+  <ol>
+    <li>
+      Banyak dari <i>legacy system</i>, sistem operasi tidak <i>patch</i> maupun{" "}
+      <i>update</i>.
+    </li>
+    <li>
+      <i>Patch</i> tidak diperhatikan dengan baik, sehingga menimbulkan masalah
+      baru dalam hal keamanan.
+    </li>
+    <li>
+      Pengguna yang tidak memahami sistem, sehingga jaringan dan protokol yang
+      mereka gunakan memiliki lubang keamanan.
+    </li>
+    <li>
+      Pengguna dan administrator membuat kesalahan dalam konfigurasi dan dalam
+      menggunakan sistem.
+    </li>
+  </ol>
+  <li>
+    Mendeteksi serangan awal, karakteristik penyerang akan menyerang suatu
+    sistem biasanya melakukan langkah-langkah awal yang mudah diketahui yaitu
+    dengan melakukan penyelidikan atau menguji sistem jaringan yang akan menjadi
+    target untuk mendapatkan titik-titik dimana mereka akan masuk.
+  </li>
+  <li>Mengamankan file yang keluar dari jaringan.</li>
+  <li>
+    Sebagai pengendali untuk rancangan keamanan dan administrator, terutama bagi
+    perusahaan yang pesat.
+  </li>
+  <li>
+    Menyediakan informasi yang akurat terhadap gangguan secara langsung,
+    meningkatkan <i>diagnosis, recovery,</i> dan mengoreksi faktor faktor
+    penyebab serangan.
+  </li>
+</ol>
+
+## Bagaimana Cara Kerja NIDS?
+
+<p>
+  NIDS bekerja dengan memeriksa berbagai titik data dari berbagai sumber dalam
+  jaringan. Header paket, statistik, dan aliran data protokol/aplikasi
+  dianalisis untuk menentukan apakah aktivitas berbahaya atau anomali telah
+  terjadi. Kemampuan NIDS dapat digunakan untuk mengidentifikasi kemungkinan
+  pelanggaran keamanan pada sistem termasuk <i>sniffer</i> dan serangan pada
+  layanan seperti HTTP/S, SMB, SSH, dan lain-lain.
+</p>
+<p>Ada dua jenis NIDS yaitu :</p>
+<ol>
+  <li>
+    <b>Sensor jaringan</b>
+  </li>
+  <p>
+    Sensor jaringan sering kali merupakan perangkat atau aplikasi khusus yang
+    berjalan secara eksklusif sebagai NIDS. Sensor memantau dan menganalisis
+    lalu lintas jaringan untuk mendeteksi perilaku berbahaya. Sensor dapat
+    ditempatkan di berbagai titik di jaringan, tergantung di mana dibutuhkan.
+    Misalnya, router mungkin memiliki sensor yang dipasang untuk memantau lalu
+    lintas yang melewati router atau switch dapat memiliki sensor yang memantau
+    lalu lintas saat melewati dari satu port ke port lainnya.
+  </p>
+  <li>
+    <b>Sistem deteksi intrusi berbasis host</b>
+  </li>
+  <p>
+    Sistem deteksi intrusi berbasis host merupakan perangkat lunak yang memantau
+    lalu lintas jaringan dari dalam satu host di jaringan. Dalam kebanyakan
+    kasus, IDS berbasis host hanya digunakan untuk memantau lalu lintas di dalam
+    host lokal atau layanan atau aplikasi tertentu. Namun, dalam beberapa kasus,
+    ia dapat memantau paket saat melewati firewall dari satu jaringan ke
+    jaringan lain atau dapat memantau aktivitas di seluruh host yang menjalankan
+    beberapa layanan dan aplikasi sekaligus.
+  </p>
+</ol>
+
+## Teknologi yang dapat dipantau oleh NIDS
+
+<p>
+  Sistem Deteksi Intrusi Jaringan menggunakan satu atau lebih teknologi untuk
+  menganalisis ancaman di jaringan Anda. Ini dapat mencakup:
+</p>
+<ul>
+  <li>
+    <b>Packet Header</b>
+  </li>
+  <p>
+    Packet header berisi informasi spesifik tentang paket yang dikirim melalui
+    jaringan Anda. Informasi di header dapat mencakup alamat IP sumber dan
+    tujuan, port, jenis protokol, dan lain lain. NIDS akan menganalisis
+    informasi ini untuk aktivitas mencurigakan atau perilaku jahat.
+  </p>
+  <li>
+    <b>Paket / transmisi</b>
+  </li>
+  <p>
+    Total paket per detik adalah teknologi umum yang digunakan oleh NIDS untuk
+    memantau ancaman di jaringan Anda. Ini mungkin opsi konfigurasi yang Anda
+    tentukan saat memasang sistem pemantauan lalu lintas di jaringan Anda. IDS
+    dapat membandingkan tingkat lalu lintas normal, dengan yang ditransmisikan
+    pada satu waktu di seluruh jaringan, untuk mendeteksi sesuatu yang tidak
+    biasa. Misalnya, jika tidak ada lalu lintas yang padat di jaringan, tetapi
+    paket masih ditransmisikan dengan kecepatan tinggi, ini dapat
+    mengindikasikan aktivitas yang mencurigakan.
+  </p>
+</ul>
+
+## Jenis Umum Sistem Deteksi Intrusi Jaringan
+
+<p>
+  Ada lima jenis NIDS umum yang dapat digunakan untuk memantau lalu lintas di
+  jaringan. Masing-masing memiliki kelebihan dan kekurangannya sendiri
+  tergantung pada kebutuhan. berikut merupakan jenis dari NIDS :
+</p>
+<ol>
+  <li>
+    <b>
+      <i>Signature-based system</i>
+    </b>
+    , Jenis NIDS ini menggunakan <i>signature</i> dari serangan yang dianalisis sebelumnya.
+    Ia mempelajari pola mana yang menunjukkan aktivitas jahat sehingga kejadian di
+    masa depan dengan karakteristik serupa akan segera terdeteksi.
+  </li>
+  <li>
+    <b>
+      <i>Stateful protocol analysis system</i>
+    </b>
+    , Jenis NIDS ini mirip dengan <i>signature-based system</i> yang mempelajari
+    pola mana yang menunjukkan aktivitas jahat.
+  </li>
+  <li>
+    <b>
+      <i>Behavioral-based system</i>
+    </b>
+    , Jenis NIDS ini menggunakan analisis perilaku untuk menentukan apakah aktivitas
+    mencurigakan telah terjadi.
+  </li>
+  <li>
+    <b>
+      <i>Anomaly-based system</i>
+    </b>
+    , Jenis NIDS ini mirip dengan <i>behavioral-based system</i>, kecuali bahwa ia
+    mempelajari seperti apa perilaku jaringan yang khas dengan menganalisis bagaimana
+    real connections dibuat dan digunakan dari waktu ke waktu.
+  </li>
+  <li>
+    <b>
+      <i>Heuristic-based system</i>
+    </b>
+    , Jenis NIDS ini menggunakan heuristik untuk melihat serangan serangan dengan{" "}
+    <i>signature</i> yang diketahui dan menganalisisnya berdasarkan <i>
+      rules
+    </i> untuk menentukan apakah ada aktivitas yang mencurigakan telah terjadi.
+  </li>
+</ol>
+
+## Tools IDS Open Source
+
+<p>
+  Ada beberapa alat deteksi intrusi (IDS) <i>open source</i> yang hebat yang
+  tersedia diantaranya:
+</p>
+<ol>
+  <li>
+    <b>Snort</b>, Snort adalah NIDS yang bekerja dengan menggunakan{" "}
+    <i>signature detection</i>, berfungsi juga sebagai <i>sniffer</i> dan{" "}
+    <i>packet logger</i>. Snort pertama kali dibuat dan dikembangkan oleh Marti
+    Roesh, lalu menjadi sebuah open source project. Versi komersial dari snort
+    dibuat oleh Sourcefire (www.sourcefire.com).
+  </li>
+  <li>
+    <b>Suricata</b>, Suricata merupakan Network IDS, IPS, dan Sebuah mesin
+    monitor keamanan jaringan dengan performa tinggi. Suricata adalah IDS open
+    source dan dimiliki oleh sebuah komunitas non-profit, yaitu{" "}
+    <i>Open Information Security Foundation</i> (OISF). Suricata dikembangkan
+    oleh OISF dan vendor pendukungnya.
+  </li>
+  <li>
+    <b>Bro (Zeek)</b>, adalah penganalisis <i>network traffic open source</i>{" "}
+    dan pasif. Banyak operator menggunakan Zeek sebagai monitor keamanan
+    jaringan (NSM) untuk mendukung penyelidikan aktivitas yang mencurigakan atau
+    berbahaya. Zeek juga mendukung berbagai tugas analisis lalu lintas di luar
+    domain keamanan, termasuk pengukuran kinerja dan pemecahan masalah.
+  </li>
+</ol>
+
+## Tools IDS Berbayar
+
+<p>Adapun tools dari IDS yang berbayar adalah sebagai berikut:</p>
+<ol>
+  <li>
+    <b>SolarWinds Security Event Manager</b>, paket HIDS dengan fitur NIDS. Alat
+    keamanan komprehensif ini berjalan di Windows Server dan dapat memproses
+    file pengambilan paket yang dihasilkan oleh Snort. Unduh uji coba gratis 30
+    hari.
+  </li>
+  <li>
+    <b>CrowdStrike Falcon Intelligence</b>, Layanan intelijen ancaman yang
+    memantau lalu lintas jaringan untuk risiko keamanan saat melewati titik
+    akhir.
+  </li>
+</ol>
+
+## Keuntungan dan Kerugian Dari NIDS
+
+<p>Berikut adalah beberapa keuntungan dari NIDS:</p>
+<ol>
+  <li>
+    Mendeteksi malware yang tidak dikenal. NIDS dapat dikonfigurasi untuk
+    mendeteksi jenis malware yang umum, serta ancaman baru atau tidak dikenal,
+    sehingga kita akan segera mengetahui saat peretas telah menyusup ke sistem.
+  </li>
+  <li>
+    Mencegah serangan. NIDS terus memonitor <i>traffic network</i> untuk
+    mengidentifikasi aktivitas mencurigakan dan memblokirnya sebelum peretas
+    dapat memperoleh akses ke sistem.
+  </li>
+  <li>
+    Mendeteksi perangkat yang disusupi. NIDS dapat mendeteksi ketika komputer
+    pengguna telah disusupi sehingga penyerang tidak dapat memperoleh akses ke
+    mesin lain di jaringan atau menggunakan mesin yang disusupi
+  </li>
+</ol>
+<p>Berikut adalah beberapa kerugian dari NIDS:</p>
+<ol>
+  <li>
+    Membutuhkan pembaruan yang sering. Penting untuk memperbarui NIDS secara
+    teratur sehingga akan terus mengenali ancaman yang diketahui dan mengikuti
+    yang baru.
+  </li>
+  <li>
+    Memerlukan konfigurasi yang ekstensif. Agar efektif, NIDS harus
+    dikonfigurasikan dengan informasi tentang bagaimana <i>network</i> biasanya
+    beroperasi.
+  </li>
+  <li>
+    Membutuhkan pemeliharaan. Beberapa sistem membutuhkan pembaruan manual dan
+    konfigurasi. Oleh karena itu kita membutuhkan manajemen konstan oleh staf IT
+    untuk lebih efektif.
+  </li>
+</ol>
+
+<Referensi>
+  <p style="text-align: start;">
+    <a href="https://www.sciencedirect.com/topics/computer-science/network-based-intrusion-detection-system">
+      https://www.sciencedirect.com/topics/computer-science/network-based-intrusion-detection-system
+    </a>
+    <br />
+    <br />
+    <a href="https://netacea.com/glossary/network-intrusion-detection-system-nids/">
+      https://netacea.com/glossary/network-intrusion-detection-system-nids/
+    </a>
+    <br />
+    <br />
+    <a href="https://alfredoeblog.wordpress.com/2012/11/22/pengeertian-dan-cara-kerja-software-snort/">
+      https://alfredoeblog.wordpress.com/2012/11/22/pengeertian-dan-cara-kerja-software-snort/
+    </a>
+    <br />
+    <br />
+    <a href="https://www.comparitech.com/net-admin/nids-tools-software/">
+      https://www.comparitech.com/net-admin/nids-tools-software/
+    </a>
+    <br />
+    <br />
+    <a href="https://cybersecurity.att.com/blogs/security-essentials/open-source-intrusion-detection-tools-a-quick-overview">
+      https://cybersecurity.att.com/blogs/security-essentials/open-source-intrusion-detection-tools-a-quick-overview
+    </a>
+  </p>
+</Referensi>
