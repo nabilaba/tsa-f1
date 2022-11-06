@@ -1,0 +1,298 @@
+---
+title: "Instalasi Suricata sebagai Network Intrusion Detection Systems berbasis Open Source"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    { name: "Nabil Aziz Bima Anggita", as: "Scrum Master / Publisher" },
+    { name: "Talita Listra", as: "Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
+    { name: "Muhammad Zainur Rifqi Al Munawwar", as: "Pembuat Laporan" }
+  ]
+date: 2022-11-04
+---
+
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+import thumbnailminggu9 from "./assets/thumbnailminggu9.jpg";
+import alurnids from "./assets/alurnids.png";
+import kibanadashboard from "./assets/kibanadashboard.png";
+import alertsbygeoip from "./assets/alertsbygeoip.png";
+import top10alerts from "./assets/top10alerts.png";
+import numberofalerts from "./assets/numberofalerts.png";
+import top20source from "./assets/top20source.png";
+import alertsummary from "./assets/alertsummary.png";
+
+<img src={useLazyImage(thumbnailminggu9)} />
+
+## Apa itu NIDS?
+
+<p>
+  <i>Network Intrusion Detection Systems</i> (NIDS) adalah salah satu upaya cara
+  untuk mendeteksi serangan dunia maya, <i>malware</i>, <i>Denial of Service</i>{" "}
+  (DoS) atau pemindaian port pada jaringan komputer atau komputer itu sendiri.
+  NIDS memantau lalu lintas jaringan dan mendeteksi aktivitas berbahaya dengan
+  mengidentifikasi pola mencurigakan dalam paket yang masuk. Setiap aktivitas
+  atau pelanggaran berbahaya biasanya dilaporkan ke administrator atau
+  dikumpulkan secara terpusat menggunakan sistem{" "}
+  <i>security information and event management</i> (SIEM).
+</p>
+<p>
+  <i>Network Intrusion Detection Systems</i> (NIDS) merupakan salah satu
+  klasifikasi IDS diatur pada titik yang direncanakan dalam jaringan untuk
+  memeriksa lalu lintas dari semua perangkat di jaringan. Tugasnya melakukan
+  pengamatan lalu lintas yang lewat di seluruh <i>subnet</i> dan mencocokkan
+  lalu lintas yang diteruskan di <i>subnet</i> dengan kumpulan serangan yang
+  diketahui. Setelah serangan diidentifikasi atau perilaku abnormal diamati,
+  peringatan dapat dikirim ke <i>administrator</i>. Contoh NIDS adalah
+  memasangnya di subnet tempat <i>firewall</i> berada untuk melihat apakah
+  seseorang mencoba memecahkan <i>firewall</i>.
+</p>
+<p>
+  Terdapat komponen bernama <i>packet captures</i> yaitu sebuah komponen kunci
+  untuk menerapkan <i>Network Intrusion Detection Systems</i> (IDS) dan
+  melakukan <i>Network Security Monitoring</i> (NSM). Ada beberapa alat IDS open
+  source yang memproses pengambilan paket dan mencari tanda tangan dari
+  kemungkinan penyusupan jaringan dan aktivitas berbahaya. Menggunakan{" "}
+  <i>packet captures</i> yang disediakan oleh <i>Network Watcher</i> dapat
+  menganalisis jaringan untuk gangguan atau kerentanan berbahaya.
+</p>
+<p>
+  Salah satu alat open source tersebut adalah <i>Suricata</i>, mesin IDS yang
+  menggunakan aturan untuk memantau lalu lintas jaringan dan memicu peringatan
+  setiap kali peristiwa mencurigakan terjadi. <i>Suricata</i> menawarkan mesin
+  <i>multi-threaded</i>, yang berarti dapat melakukan analisis lalu lintas jaringan
+  dengan peningkatan kecepatan dan efisiensi. Untuk detail lebih lanjut tentang
+  <i>Suricata</i> dan kemampuannya, kunjungi situs <i>website Suricata</i> di
+  https://suricata.io/.
+</p>
+
+## Alur NIDS
+
+<p>
+  Publikasi bertujuan menjelaskan cara mengatur lingkungan untuk melakukan
+  deteksi intrusi jaringan menggunakan <i>Network Watcher</i>, <i>Suricata</i>,
+  dan <i>Elastic Stack</i>. <i>Network Watcher</i> memberikan sebuah tangkapan
+  paket yang digunakan untuk melakukan deteksi intrusi jaringan. <i>Suricata</i>{" "}
+  memproses paket yang menangkap dan memicu peringatan berdasarkan paket yang
+  cocok dengan aturan ancaman yang diberikan. Peringatan ini disimpan dalam{" "}
+  <i>log files</i> di mesin lokal. Dengan menggunakan <i>Elastic Stack</i>,{" "}
+  <i>log</i> yang dihasilkan oleh <i>Suricata</i> dapat diindeks dan digunakan
+  untuk membuat <i>dashboard Kibana</i>, memberikan representasi visual dari{" "}
+  <i>log</i> dan sarana untuk mendapatkan wawasan tentang potensi kerentanan
+  jaringan dengan cepat.
+</p>
+<img src={useLazyImage(alurnids)} />
+<p>
+  Kedua alat <i>open source</i> dapat diatur pada <i>Azure</i> VM, dan
+  memungkinkan untuk melakukan analisis di dalam lingkungan jaringan{" "}
+  <i>Azure</i> yang dimiliki.
+</p>
+
+## Require Minimum
+
+<p>
+  Terdapat beberapa kebutuhan yang dibutuhkan, penulis mengacu pada referensi
+  <i>digitalocean</i>, minimal terdapat:
+</p>
+<ol>
+  <li>Ubuntu 20.4</li>
+  <li>
+    Server dengan spesifikasi 4GB RAM dan 2 CPUs dengan pengaturan non-root sudo
+    user.
+  </li>
+</ol>
+
+## Langkah - Langkah Instalasi NIDS
+
+### Install Suricata
+
+<p>
+  Untuk semua metode pemasangan lengkapnya, silahkan mengunjungi ke halaman
+  website
+  https://suricata.readthedocs.io/en/suricata-5.0.2/quickstart.html#installation
+</p>
+<p>Atau sebagai berikut:</p>
+<ol>
+  <li>Di terminal baris perintah VM, jalankan perintah berikut:</li>
+  <code style="white-space: pre-wrap;">
+    sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update sudo
+    apt-get install suricata
+  </code>
+  <li>
+    Untuk memverifikasi pemasangan, jalankan perintah suricata -h untuk melihat
+    daftar lengkap perintah.
+  </li>
+</ol>
+
+### Unduh Kumpulan Aturan “The Emerging Threats”
+
+<p>
+  Pada tahap ini, tidak diperlukan untuk menjalankan <i>Suricata</i>. Tergantung
+  pada jika ada ancaman khusus pada jaringan yang ingin dideteksi, atau juga
+  bisa dapat menggunakan kumpulan aturan yang dikembangkan dari sejumlah
+  penyedia, seperti <i>Emerging Threats</i>, atau <i>VRT rules</i> dari Snort.
+  Pengguna dapat menggunakan aturan <i>Emerging Threats</i> yang dapat diakses
+  secara bebas di sini:
+</p>
+<p>Unduh kumpulan aturan dan salin ke direktori:</p>
+<code style="white-space: pre-wrap;">
+  wget https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz tar
+  zxf emerging.rules.tar.gz sudo cp -r rules /etc/suricata/
+</code>
+
+### Proses Pengambilan Paket dengan Suricata
+
+<p>
+  Untuk memproses pengambilan paket menggunakan <i>Suricata</i>, jalankan
+  perintah berikut:
+</p>
+<code style="white-space: pre-wrap;">
+  sudo suricata -c /etc/suricata/suricata.yaml -r [location_of_pcapfile]
+</code>
+<p>
+  Untuk memeriksa peringatan yang dihasilkan, baca <i>file</i> fast.log:
+</p>
+<code style="white-space: pre-wrap;">tail -f /var/log/suricata/fast.log</code>
+
+### Menyiapkan Elastic Stack
+
+<p>
+  Meskipun log yang dihasilkan <i>Suricata</i> berisi informasi berharga tentang
+  apa yang terjadi di jaringan, namun <i>log files</i> ini tidaklah mudah untuk
+  dibaca dan dipahami. Dengan menghubungkan <i>Suricata dengan Elastic Stack</i>,
+  pengguna dapat membuat <i>dashboard Kibana</i> yang memungkinkan pengguna untuk
+  mencari, membuat grafik, menganalisis, dan memperoleh wawasan dari <i>log</i>
+  yang dihasilkan.
+</p>
+
+### Install Elasticsearch
+
+### Install Kibana
+
+### Membuat dashboard Kibana
+
+<p>
+  Untuk publikasi ini, anggota kelompok telah menyediakan <i>dashboard</i>{" "}
+  contoh untuk melihat detail dalam lansiran.
+</p>
+<ol>
+  <li>
+    Unduh <i>the dashboard file</i>{" "}
+    <a href="https://aka.ms/networkwatchersuricatadashboard" target="_blank">
+      disini
+    </a>
+    , <i>the visualization file</i> <a
+      href="https://aka.ms/networkwatchersuricatavisualization"
+      target="_blank"
+    >
+      disini
+    </a>, dan <i>the saved search file</i> <a
+      href="https://aka.ms/networkwatchersuricatasavedsearch"
+      target="_blank"
+    >
+      disini
+    </a>.
+  </li>
+  <li>
+    Di bawah tab Manajemen <i>Kibana</i>, navigasikan ke <i>Saved Objects</i>{" "}
+    dan impor ketiga
+    <i>file</i>. Kemudian dari tab <i>dashboard</i>, pengguna dapat membuka dan memuat
+    contoh
+    <i>dashboard</i>.
+  </li>
+</ol>
+<p>
+  <i>Visualisasi</i> dan <i>dashboard</i> sendiri juga dapat dibuat dengan
+  menyesuaikan metrik yang diminati. Pengguna dapat membaca lebih lanjut tentang
+  membuat <i>visualisasi Kibana</i> dari dokumentasi resmi <i>Kibana</i>.
+</p>
+<img src={useLazyImage(kibanadashboard)} />
+
+### Visualisasikan Logs Peringatan IDS
+
+<p>
+  Terdapat sampel <i>dashboard</i> yang menyediakan beberapa <i>visualisasi</i>{" "}
+  dari <i>log</i>
+  peringatan <i>Suricata</i>:
+</p>
+<ol>
+  <li>
+    <i>Alerts by GeoIP</i>, yaitu peta yang menunjukkan distribusi peringatan
+    berdasarkan lokasi geografis (ditentukan oleh IP) negara/wilayah asalnya.
+  </li>
+  <img src={useLazyImage(alertsbygeoip)} />
+  <li>
+    <i>Top 10 Alerts</i>, yaitu ringkasan dari 10 peringatan yang paling sering
+    dipicu dan deskripsinya. Menekan peringatan individual akan menyaring di{" "}
+    <i>dashboard</i>
+    ke informasi yang berkaitan dengan peringatan tertentu.
+  </li>
+  <img src={useLazyImage(top10alerts)} />
+  <li>
+    <i>Number of Alerts</i>, yaitu jumlah total peringatan yang dipicu oleh
+    kumpulan aturan.
+  </li>
+  <img src={useLazyImage(numberofalerts)} />
+  <li>
+    <i>Top 20 Source/Destination IPs/Ports</i>, yaitu diagram lingkaran yang
+    menunjukkan 20 IP dan <i>port</i> teratas yang memicu peringatan. Pengguna
+    dapat menyaring IP/<i>port</i> tertentu untuk melihat berapa banyak dan
+    jenis peringatan apa yang dipicu.
+  </li>
+  <img src={useLazyImage(top20source)} />
+  <li>
+    <i>Alert Summary</i>, yaitu tabel yang merangkum detail spesifik dari setiap
+    peringatan individu. Pengguna dapat menyesuaikan tabel ini untuk menampilkan
+    parameter lain yang menarik untuk setiap lansiran.
+  </li>
+  <img src={useLazyImage(alertsummary)} />
+</ol>
+<p>
+  Untuk dokumentasi lebih lanjut tentang membuat <i>visualisasi</i> dan{" "}
+  <i>dashboard</i> khusus, pengguna dapat melihat dokumentasi resmi dari{" "}
+  <i>Kibana</i>.
+</p>
+
+## Kesimpulan
+
+<p>
+  Dengan menggabungkan <i>packet captures</i> yang disediakan oleh{" "}
+  <i>Network Watcher</i> dan alat IDS <i>open source</i> seperti <i>Suricata</i>
+  , Pengguna dapat melakukan deteksi intrusi jaringan untuk berbagai ancaman.{" "}
+  <i>Dashboard</i> ini memungkinkan pengguna untuk dengan cepat melihat
+  kecenderungan dan anomali di dalam jaringan, serta menggali data untuk
+  menemukan akar penyebab peringatan seperti agen pengguna yang berbahaya atau{" "}
+  <i>port</i> yang rentan. Dengan data yang diekstraksi ini, pengguna dapat
+  membuat keputusan berdasarkan informasi tentang cara bereaksi dan melindungi
+  jaringan pengguna dari upaya penyusupan yang berbahaya, dan membuat aturan
+  untuk mencegah penyusupan di masa mendatang ke jaringan pengguna.
+</p>
+
+<Referensi>
+  <p style="text-align: start;">
+    <i>Intrusion Detection System (IDS).</i> (2022, January 17). GeeksforGeeks.
+    Retrieved November 2, 2022, from{" "}
+    <a href="https://www.geeksforgeeks.org/intrusion-detection-system-ids/">
+      https://www.geeksforgeeks.org/intrusion-detection-system-ids/
+    </a>
+    <br />
+    <br />
+    Microsoft. (2022, September 30). <i>
+      Perform network intrusion detection with open source tools - Azure Network
+      Watcher.
+    </i> Microsoft Learn. Retrieved November 1, 2022, from <a href="https://learn.microsoft.com/th-th/azure/network-watcher/network-watcher-intrusion-detection-open-source-tools">
+      https://learn.microsoft.com/th-th/azure/network-watcher/network-watcher-intrusion-detection-open-source-tools
+    </a>
+    <br />
+    <br />
+    Sukianto, A. (2022, January 11).{" "}
+    <i>
+      Top 6 Free Network Intrusion Detection Systems (NIDS) Software in 2022.
+    </i>{" "}
+    UpGuard. Retrieved November 3, 2022, from{" "}
+    <a href="https://www.upguard.com/blog/top-free-network-based-intrusion-detection-systems-ids-for-the-enterprise">
+      https://www.upguard.com/blog/top-free-network-based-intrusion-detection-systems-ids-for-the-enterprise
+    </a>
+  </p>
+</Referensi>
