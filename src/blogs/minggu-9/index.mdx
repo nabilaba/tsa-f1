@@ -3,7 +3,10 @@ title: "Instalasi Suricata sebagai Network Intrusion Detection Systems berbasis 
 members:
   [
     { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
-    { name: "Nabil Aziz Bima Anggita", as: "Scrum Master / Pembuat Laporan / Publisher" },
+    {
+      name: "Nabil Aziz Bima Anggita",
+      as: "Scrum Master / Pembuat Laporan / Publisher"
+    },
     { name: "Talita Listra", as: "Pembuat Laporan" },
     { name: "Izzhan Hawary", as: "Pembuat Laporan" },
     { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
@@ -115,10 +118,12 @@ import alertsummary from "./assets/alertsummary.png";
 <p>Atau sebagai berikut:</p>
 <ol>
   <li>Di terminal baris perintah VM, jalankan perintah berikut:</li>
-  <code style="white-space: pre-wrap;">
-    sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update sudo
-    apt-get install suricata
-  </code>
+  <p style={{ textAlign: "start" }}>
+    <code style="white-space: pre-wrap;">
+      sudo add-apt-repository ppa:oisf/suricata-stable sudo apt-get update sudo
+      apt-get install suricata
+    </code>
+  </p>
   <li>
     Untuk memverifikasi pemasangan, jalankan perintah suricata -h untuk melihat
     daftar lengkap perintah.
@@ -136,10 +141,12 @@ import alertsummary from "./assets/alertsummary.png";
   secara bebas di sini:
 </p>
 <p>Unduh kumpulan aturan dan salin ke direktori:</p>
-<code style="white-space: pre-wrap;">
-  wget https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz tar
-  zxf emerging.rules.tar.gz sudo cp -r rules /etc/suricata/
-</code>
+<p style={{ textAlign: "start" }}>
+  <code style="white-space: pre-wrap;">
+    wget https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
+    tar zxf emerging.rules.tar.gz sudo cp -r rules /etc/suricata/
+  </code>
+</p>
 
 ### Proses Pengambilan Paket dengan Suricata
 
@@ -147,22 +154,27 @@ import alertsummary from "./assets/alertsummary.png";
   Untuk memproses pengambilan paket menggunakan <i>Suricata</i>, jalankan
   perintah berikut:
 </p>
-<code style="white-space: pre-wrap;">
-  sudo suricata -c /etc/suricata/suricata.yaml -r [location_of_pcapfile]
-</code>
+<p style={{ textAlign: "start" }}>
+  <code style="white-space: pre-wrap;">
+    sudo suricata -c /etc/suricata/suricata.yaml -r [location_of_pcapfile]
+  </code>
+</p>
 <p>
   Untuk memeriksa peringatan yang dihasilkan, baca <i>file</i> fast.log:
 </p>
-<code style="white-space: pre-wrap;">tail -f /var/log/suricata/fast.log</code>
+<p style={{ textAlign: "start" }}>
+  <code style="white-space: pre-wrap;">tail -f /var/log/suricata/fast.log</code>
+</p>
 
 ### Menyiapkan Elastic Stack
 
 <p>
   Meskipun log yang dihasilkan <i>Suricata</i> berisi informasi berharga tentang
   apa yang terjadi di jaringan, namun <i>log files</i> ini tidaklah mudah untuk
-  dibaca dan dipahami. Dengan menghubungkan <i>Suricata dengan Elastic Stack</i>,
-  pengguna dapat membuat <i>dashboard Kibana</i> yang memungkinkan pengguna untuk
-  mencari, membuat grafik, menganalisis, dan memperoleh wawasan dari <i>log</i>
+  dibaca dan dipahami. Dengan menghubungkan <i>Suricata dengan Elastic Stack</i>
+  , pengguna dapat membuat <i>dashboard Kibana</i> yang memungkinkan pengguna
+  untuk mencari, membuat grafik, menganalisis, dan memperoleh wawasan dari{" "}
+  <i>log</i>
   yang dihasilkan.
 </p>
 
@@ -258,15 +270,15 @@ import alertsummary from "./assets/alertsummary.png";
 
 <p>
   Dengan menggabungkan <i>packet captures</i> yang disediakan oleh{" "}
-  <i>Network Watcher</i> dan alat IDS <i>open source</i> seperti <i>Suricata</i>
-  , Pengguna dapat melakukan deteksi intrusi jaringan untuk berbagai ancaman.{" "}
-  <i>Dashboard</i> ini memungkinkan pengguna untuk dengan cepat melihat
-  kecenderungan dan anomali di dalam jaringan, serta menggali data untuk
-  menemukan akar penyebab peringatan seperti agen pengguna yang berbahaya atau{" "}
-  <i>port</i> yang rentan. Dengan data yang diekstraksi ini, pengguna dapat
-  membuat keputusan berdasarkan informasi tentang cara bereaksi dan melindungi
-  jaringan pengguna dari upaya penyusupan yang berbahaya, dan membuat aturan
-  untuk mencegah penyusupan di masa mendatang ke jaringan pengguna.
+  <i>Network Watcher</i> dan alat IDS <i>open source</i> seperti <i>Suricata</i>,
+  Pengguna dapat melakukan deteksi intrusi jaringan untuk berbagai ancaman. <i>
+    Dashboard
+  </i> ini memungkinkan pengguna untuk dengan cepat melihat kecenderungan dan anomali
+  di dalam jaringan, serta menggali data untuk menemukan akar penyebab peringatan
+  seperti agen pengguna yang berbahaya atau <i>port</i> yang rentan. Dengan data
+  yang diekstraksi ini, pengguna dapat membuat keputusan berdasarkan informasi tentang
+  cara bereaksi dan melindungi jaringan pengguna dari upaya penyusupan yang berbahaya,
+  dan membuat aturan untuk mencegah penyusupan di masa mendatang ke jaringan pengguna.
 </p>
 
 <Referensi>
