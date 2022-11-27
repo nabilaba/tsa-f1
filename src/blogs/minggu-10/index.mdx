@@ -1,0 +1,229 @@
+---
+title: "Pemanfaatan NIDS Dengan ELK Stack Tentang Penjelasan Data Informasi & Visualisasi"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    { name: "Muhammad Aldi Irfan", as: "Scrum Master / Pembuat Laporan" },
+    { name: "Talita Listra", as: "Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Muhammad Zainur Rifqi Al Munawwar", as: "Pembuat Laporan" },
+    { name: "Nabil Aziz Bima Anggita", as: "Publisher" }
+  ]
+date: 2022-11-11
+---
+
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+import thumbnailminggu10 from "./assets/thumbnailminggu10.png";
+import minggu10_1 from "./assets/1.png";
+import minggu10_2 from "./assets/2.png";
+import minggu10_3 from "./assets/3.png";
+import minggu10_4 from "./assets/4.png";
+import minggu10_5 from "./assets/5.png";
+import minggu10_6 from "./assets/6.png";
+import minggu10_7 from "./assets/7.png";
+
+<img src={useLazyImage(thumbnailminggu10)} />
+
+## Pengertian Network-based Intrusion Detection System (NIDS)
+
+<p>
+  <i>Network-based Intrusion Detection System</i> (NIDS): Semua lalu lintas yang
+  mengalir ke sebuah jaringan akan dianalisis untuk mencari apakah ada percobaan
+  serangan atau penyusupan ke dalam sistem jaringan.
+</p>
+
+## Komponen Elastic Stack
+
+<ul>
+  <li>
+    Beats merupakan shipping agent yang memiliki fungsi untuk mengirimkan data
+    log ke dalam Logstash. Contohnya (Filebeat, Winlogbeat, Packetbeat).
+  </li>
+  <li>
+    Elasticsearch menyediakan mesin pencari teks yang terdistribusi dan
+    multitenant dengan antarmuka web Dasbor HTTP (Kibana). Selanjutnya, data
+    akan ditampilkan, diambil, dan disimpan dengan format JSON.
+  </li>
+  <li>
+    Logstash menyediakan pipelining real-time yang dapat mengumpulkan data.
+  </li>
+  <li>
+    Kibana adalah alat visualisasi data open source untuk Elasticsearch. Dalam
+    Kibana tersedia antarmuka web dashboard.
+  </li>
+</ul>
+
+## Cara Membuat Visualisasi Data Pada kibana
+
+<p>
+  Sebagai cara untuk mempermudah analis untuk memahami dan melakukan analisis
+  pada log NIDS, maka diperlukan suatu metode untuk melakukan pengolahan data
+  log yang ada pada NIDS. Salah satu metode yang dapat dimanfaatkan adalah
+  dengan merubah data log yang awalnya berupa teks biasa menjadi visualisasi
+  berupa grafik maupun diagram yang disajikan dalam sebuah dashboard. Hal
+  tersebut dapat dilakukan dengan menggunakan Kibana sebagai salah satu media
+  visualisasi data dari NIDS. Adapun tahapan-tahapan yang dapat dilakukan untuk
+  membuat visualisasi:
+</p>
+<img src={useLazyImage(minggu10_1)} />
+
+## Visualisasi Pada Kibana
+
+<ul>
+  <li>Tambahkan data dan buat dasboredit</li>
+  <li>Tambahkan data log web sampel, lalu buat dan siapkan dasbor.</li>
+  <ol>
+    <li>Di halaman beranda, klik Coba data sampel.</li>
+    <li>Klik kumpulan data sampel lainnya.</li>
+    <li>Di kartu Contoh log web, klik Tambahkan data.</li>
+  </ol>
+  <li>Buat dasbor tempat Anda akan menampilkan panel visualisasi.</li>
+  <ol>
+    <li>Buka menu utama, lalu klik Dasbor.</li>
+    <li>Klik Buat dasbor.</li>
+    <li>Setel filter waktu ke 90 hari terakhir.</li>
+  </ol>
+  <li>Buka editor visualisasi dan biasakan diri dengan dataedit</li>
+  <li>Buka editor visualisasi, lalu pastikan bidang yang benar muncul.</li>
+  <ol>
+    <li>Di dasbor, klik Buat visualisasi.</li>
+    <li>Pastikan tampilan data Kibana Sample Data Logs muncul.</li>
+    <img src={useLazyImage(minggu10_2)} />
+  </ol>
+  <li>
+    To create the visualizations in this tutorial, you’ll use the following
+    fields:
+  </li>
+  <ul>
+    <li>Records</li>
+    <li>timestamp</li>
+    <li>bytes</li>
+    <li>clientip</li>
+    <li>referer.keyword</li>
+  </ul>
+  <li>
+    To see the most frequent values in a field, hover over the field name, then
+    click i.
+  </li>
+</ul>
+<p>
+  Pilih bidang yang ingin Anda analisis, seperti clientip. Untuk menganalisis
+  bidang clientip saja, gunakan visualisasi Metrik untuk menampilkan bidang
+  sebagai angka.
+</p>
+<p>
+  Satu-satunya fungsi angka yang dapat Anda gunakan dengan clientip adalah
+  Hitungan unik, juga disebut sebagai kardinalitas, yang memperkirakan jumlah
+  nilai unik.
+</p>
+<ol>
+  <li>Buka tarik-turun Jenis visualisasi, lalu pilih Metrik.</li>
+  <img src={useLazyImage(minggu10_3)} />
+  <li>
+    Dari daftar Bidang yang tersedia, seret clientip ke panel ruang kerja atau
+    lapisan.
+  </li>
+  <img src={useLazyImage(minggu10_4)} />
+  <p>
+    Pada panel layer, Unique count of clientip muncul karena editor secara
+    otomatis menerapkan fungsi Unique count ke bidang clientip. Hitungan unik
+    adalah satu-satunya fungsi numerik yang berfungsi dengan alamat IP.
+  </p>
+  <li>Di panel layer, klik Unique count of clientip.</li>
+  <ul>
+    <li>Di bidang Nama, masukkan Pengunjung unik.</li>
+    <li>Klik Tutup.</li>
+  </ul>
+  <li>Klik Simpan dan kembali.</li>
+  <p>
+    [Tanpa Judul] muncul di header panel visualisasi. Karena visualisasi
+    memiliki label Pengunjung uniknya sendiri, Anda tidak perlu menambahkan
+    judul panel.
+  </p>
+</ol>
+
+## Log Activity di Dalam Kibana
+
+<p>Pada Kibana terdapat 3 log activity yaitu</p>
+<ol>
+  <li>Logs Stream</li>
+  <li>Logs Anomalies</li>
+  <li>Logs Categories</li>
+</ol>
+
+### Logs Stream
+
+<p>
+  Pada bagian halaman logs stream ini berfungsi untuk melakukan pemantauan semua
+  aktivitas log yang mengalir dari server, mesin virtual, dan kontainer secara
+  real time. kemudian untuk melihat tayangan pencatatan aktivitas dapat
+  dilakukan dengan menekan tombol stream live dan dashboard akan memulai
+  menampilkan rangkaian <i>logs messages</i> secara realtime. Kemudian untuk
+  melihat historical logs dari rentang waktu yang ditentukan dapat menekan
+  tombol stop streaming.
+</p>
+<img src={useLazyImage(minggu10_5)} />
+
+### Log Anomalies
+
+<p>
+  Pada bagian halaman log anomalies berfungsi untuk mendeteksi dan memeriksa
+  anomali serangan pada log dan log partition di mana tempat terjadinya anomali.
+  Yang berarti memungkinkan user untuk dapat melihat dan mendeteksi perilaku
+  anomali yang terjadi tanpa ada campur tangan manusia sehingga tidak perlu lagi
+  mengambil sampel data log secara manual,menghitung tarif, dan menentukan
+  apakah tarif diharapkan.
+</p>
+<img src={useLazyImage(minggu10_6)} />
+
+### Logs Categories
+
+<p>
+  Pada bagian halaman log categories berfungsi untuk dapat mengklasifikasikan
+  dan membuat log activity menjadi lebih terstruktur. kemudian pada bagian
+  halaman log categories memungkinkan user mengidentifikasi pola dalam peristiwa
+  log dengan cepat. Alih-alih mengidentifikasi log serupa secara manual,
+  tampilan kategorisasi log mencantumkan peristiwa log yang telah dikelompokkan
+  berdasarkan pesan dan formatnya sehingga Anda dapat mengambil tindakan lebih
+  cepat.
+</p>
+
+## Event Overview Pada Kibana
+
+### Ringkasan Data
+
+<p>
+  Data pada Dashboard Kibana merupakan solusi terbaik untuk menambahkannya ke
+  Elastic Stack dengan menggunakan salah satu aplikasi yang terintegrasi, Data
+  merupakan aset pra-paket yang tersedia untuk beragam layanan dan platform.
+  Dengan integrasi, pengguna dapat menambahkan pemantauan log, pemantauan metrik
+  dan melindungi sistem dari ancaman serangan.
+</p>
+<p>
+  Saat integrasi tersedia untuk Elastic Agent dan Beats, tampilan Integrasi
+  secara default mengarah ke integrasi Elastic Agent, jika tersedia secara umum
+  (GA) atau Generally Available. Untuk menampilkan integrasi Beats, gunakan
+  filter yang terletak dibawah navigasi.
+</p>
+<img src={useLazyImage(minggu10_7)} />
+
+<Referensi>
+  <p style="text-align: start;">
+    “Create your first dashboard | Kibana Guide [8.5].” <i>Elastic</i>,{" "}
+    <a href="https://www.elastic.co/guide/en/kibana/8.5/create-a-dashboard-of-panels-with-web-server-data.html.">
+      https://www.elastic.co/guide/en/kibana/8.5/create-a-dashboard-of-panels-with-web-server-data.html
+    </a>
+    . Accessed 26 November 2022.
+    <br />
+    <br />
+    “Sistem deteksi intrusi.” <i>Wikipedia</i>,{" "}
+    <a href="https://id.wikipedia.org/wiki/Sistem_deteksi_intrusi">
+      https://id.wikipedia.org/wiki/Sistem_deteksi_intrusi
+    </a>
+    . Accessed 25 November 2022.
+    <br />
+    <br />
+    YUGITAMA, RIZKI. <i>Pengolahan & Visualisasi Data NIDS & HIDS</i>.
+  </p>
+</Referensi>

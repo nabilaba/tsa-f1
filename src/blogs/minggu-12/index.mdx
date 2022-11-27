@@ -1,0 +1,271 @@
+---
+title: "Wireshark Untuk Monitoring Jaringan Komputer"
+members:
+  [
+    { name: "Rizky Yugitama, S.S.T.TP., M.T", as: "Product Owner / Mentor" },
+    {
+      name: "Muhammad Zainur Rifqi Al Munawwar",
+      as: "Scrum Master / Pembuat Laporan"
+    },
+    { name: "Talita Listra", as: "Pembuat Laporan" },
+    { name: "Muhammad Aldi Irfan", as: "Pembuat Laporan" },
+    { name: "Izzhan Hawary", as: "Pembuat Laporan" },
+    { name: "Nabil Aziz Bima Anggita", as: "Publisher" }
+  ]
+date: 2022-11-25
+---
+
+import { useLazyImage } from "../../hooks/useLazyImage";
+import Referensi from "../../components/Referensi";
+import thumbnailminggu12 from "./assets/thumbnailminggu12.png";
+import minggu12_1 from "./assets/1.jpg";
+import minggu12_2 from "./assets/2.png";
+import minggu12_3 from "./assets/3.jpg";
+
+<img src={useLazyImage(thumbnailminggu12)} />
+
+<p>
+  Monitoring jaringan komputer dibutuhkan untuk melakukan pengawasan pada
+  jaringan yang kita miliki atau yang telah kita buat, agar jaringan selalu
+  terkontrol dan apabila koneksi terputus dapat langsung diketahui oleh kita
+  atau administrator jaringan. Salah satu cara yang dapat dilakukan untuk
+  melakukan monitoring jaringan yaitu dengan menggunakan software, software
+  disini banyak sekali macamnya dan berbeda beda feature dan fungsinya. Pada
+  kali ini akan dibahas salah satu software untuk monitoring jaringan komputer
+  yaitu Wireshark .
+</p>
+
+## Wireshark
+
+<p>
+  Wireshark adalah sebuah aplikasi untuk capture paket data yang memiliki basis
+  open source, biasanya digunakan untuk memindai jaringan internet. Jadi
+  Wireshark ini berguna untuk menangkap dan juga memindai trafik data yang ada
+  pada sebuah jaringan internet tertentu. Aplikasi Wireshark ini memang secara
+  umum digunakan untuk menjadi satu alat troubleshoot jaringan yang bermasalah.
+</p>
+<p>
+  Selain digunakan sebagai salah satu alat troubleshoot, Wireshark ini juga umum
+  digunakan pada pengujian sebuah software online. Karena kemampuan dari
+  Wireshark untuk bisa membaca setiap konten dari setiap paket trafik data,
+  tentunya membuat aplikasi ini sangat mampu menjadi penguji software. Wireshark
+  sendiri memiliki banyak kelebihan, salah satunya mendukung cukup banyak format
+  file capture paket termasuk .cap dan .erf. Kelebihan lainnya yakni alat
+  deskripsi yang memang sudah terintegrasi di dalam aplikasi mampu menampilkan
+  paket terenkripsi dari beberapa protokol. Jadi alat deskripsi di Wireshark
+  mampu menampilkan paket terenkripsi dari protokol yang umum digunakan di
+  jaringan internet saat ini.
+</p>
+<p>
+  Dengan kondisi dari alat deskripsi yang dimiliki oleh Wireshark ini, maka
+  aplikasi ini bisa menampilkan paket terenkripsi dari WEP dan juga WPA/WPA2.
+  Kelebihan lainnya dan juga menjadikan kemudahan dari mengenal Wireshark ini
+  yakni soal distribusi pengembangannya yang kita bilang sebagai cross platform.
+  Jadi baik itu pengguna Linux atau Macintosh juga bisa install dan memakai
+  aplikasi ini.
+</p>
+
+## Manfaat Wireshark
+
+<p>Manfaat dari penggunaan aplikasi Wireshark ini yaitu sebagai berikut :</p>
+<ol>
+  <li>
+    Menangkap informasi atau data paket yang dikirim dan diterima dalam jaringan
+    komputer
+  </li>
+  <li>Mengetahui aktivitas yang terjadi dalam jaringan komputer</li>
+  <li>
+    Mengetahui dan menganalisa kinerja jaringan komputer yang kita miliki
+    seperti kecepatan akses/share data dan koneksi jaringan ke internet
+  </li>
+  <li>Mengamati keamanan dari jaringan komputer yang kita miliki</li>
+</ol>
+
+## Fungsi Wireshark
+
+<p>Berikut beberapa fungsi aplikasi Wireshark yang perlu kamu ketahui:</p>
+<ol>
+  <li>
+    Fungsi aplikasi Wireshark yang utama dipakai oleh network administrator
+    untuk menganalisa kinerja jaringannya. Wireshark mampu menangkap paket-paket
+    data atau informasi yang berjalan dalam jaringan yang terlihat. Semua jenis
+    informasi ini dapat dengan mudah dianalisa yaitu dengan memakai sniffing,
+    dengan sniffing diperoleh informasi penting seperti kata sandi akun lain.
+  </li>
+  <li>
+    Fungsi aplikasi Wireshark sangat berguna untuk profesional jaringan,
+    administrator jaringan, peneliti, hingga pengembang piranti lunak jaringan.
+    Hal ini karena Wireshark merupakan software untuk melakukan analisa
+    lalu-lintas jaringan komputer
+  </li>
+  <li>
+    Menganalisa transmisi paket data dalam jaringan, proses koneksi dan
+    transmisi data antar komputer.
+  </li>
+  <li>
+    Membaca data secara langsung dari Ethernet, Token-Ring, FDDI, serial (PPP
+    dan SLIP), 802.11 wireless LAN, dan koneksi ATM.
+  </li>
+  <li>
+    Sering digunakan oleh chatters untuk mengetahui ip korban maupun para
+    chatter lainnya lewat typingan room.
+  </li>
+  <li>
+    Selama bisa mendapatkan paket langsung dari jaringan, dengan tools seperti
+    wireshark, maka kamu juga bisa memanfaatkan wireshark untuk 'menyadap'
+    pembicaraan Voice over IP.
+  </li>
+</ol>
+
+## Cara Kerja Wireshark
+
+<p>
+  Pada intinya adalah menangkap semua paket data trafik yang ada di satu
+  jaringan di protokol yang umum digunakan. Namun supaya bisa bekerja dengan
+  baik Wireshark ini membutuhkan aplikasi pondasi yang tentunya harus ada yakni
+  WinPcap atau Npcap. Jadi Anda harus pastikan kalau salah satu dari aplikasi
+  tersebut sudah ada untuk Anda bisa memakai aplikasi Wireshark ini.
+</p>
+<p>
+  WinPcap sendiri memang masih digunakan di Windows 7, akan tetapi untuk di
+  Windows 10 sudah tidak digunakan, dan pengembangannya ada di Npcap. Windows
+  memiliki perbedaan dengan Linux yang mempergunakan konsep Pcap sebagai Libcap
+  Library, sementara Windows memakai Npcap saat ini. jadi kalau Linux itu
+  menggunakan Libcap Library Pcap, sementara Windows memakai Npcap.
+</p>
+<p>
+  Pcap itu sendiri adalah sebuah API (Application Programming Interface) yang
+  dipakai untuk menangkap beberapa data trafik dari jaringan internet. Pcap
+  sendiri bukan hal yang baru, karena ini merupakan inti dari program
+  penangkapan paket data yang dipakai oleh pendahulunya. Wireshark membutuhkan
+  Pcap untuk menangkap data, jadi Wireshark hanya menangkap apa yang didukung
+  oleh Pcap tadi.
+</p>
+
+## Installasi Wireshark
+
+<p>
+  Jika belum memiliki softwarenya bisa didownload pada situs resminya bisa
+  searching di google atau bisa juga minta kepada teman anda yang memiliki, agar
+  lebih jelasnya cara instalasi wireshark yaitu sebagai berikut :
+</p>
+<p>
+  Sebelum memulai menginstall Wireshark disarankan Anda mengunduh dan
+  menginstall Npcap terlebih dahulu. Npcap bisa Anda dapatkan di alamat
+  <a href="nmap.org/npcap">nmap.org/npcap</a>.
+</p>
+<p>
+  Aplikasi Wireshark dapat di-download secara gratis melalui situs download
+  Wireshark Foundation untuk MacOS dan Windows di alamat
+  <a href="www.wireshark.org/download">www.wireshark.org/download</a>. Pada alamat
+  tersebut Anda akan menemukan beberapa versi rilis. Apabila Anda baru pertama kali
+  mencoba menggunakan Wireshark, disarankan Anda pilih yang berlabel <b>
+    <i>stable release</i>
+  </b> saja untuk lebih amannya. Di tengah proses <i>install</i> Anda akan diberikan
+  pilihan untuk menginstall Npcap, berikan tanda cek bila Anda belum menginstallnya.
+</p>
+<p>
+  Untuk Linux dapat diinstal dengan menggunakan CLI (
+  <i>command line interface</i>)<b>sudo apt</b>. Metode instalasinya mungkin
+  akan berbeda-beda untuk setiap versi Linux, berikut ini sebagai contoh untuk
+  Linux Ubuntu 18.04 LTS.
+</p>
+
+<ol>
+  <li>
+    Buka command prompt lalu ketikkan perintah '<b>$ sudo apt update</b>' untuk
+    mengupdate 'repository package'.
+  </li>
+  <li>
+    Setelah proses nomor 1 selesai, ketikkan '<b>$ sudo apt install wireshark</b>'.
+  </li>
+  <li>
+    Beberapa saat setelah itu akan muncul jendela 'Package configuration',
+    secara default Wireshark akan berjalan sebagai '<b>root</b>', pilih 'Yes' jika Anda
+    tidak ingin menggunakan Wireshark dengan privilege root.
+  </li>
+  <li>Tunggu sampai proses instalasi selesai, kemudian reboot PC</li>
+  <img src={useLazyImage(minggu12_1)} />
+</ol>
+
+## Proses Capture Data Packet
+
+<p>Berikut ini cara menggunakan fungsi capture pada Wireshark.</p>
+<p>
+  Saat aplikasi Wireshark dibuka Anda akan menemui '<i>welcome screen</i>' yang
+  menampilkan daftar koneksi jaringan yang '<i>available</i>' pada perangkat PC
+  yang sedang Anda gunakan. Pilih satu atau beberapa sesuai kebutuhan, lalu
+  lakukan <i>capture</i>.
+</p>
+<img src={useLazyImage(minggu12_2)} />
+<p>
+  Setelah beberapa saat, Anda dapat lakukan Save as atau Export untuk merekan
+  hasil capture. Proses save atau export ini dapat Anda lakukan sementara
+  program masih melakukan proses capture.
+</p>
+<p>
+  Untuk menghentikan proses capture, tekan Ctrl+E atau tekan tombol Stop pada
+  toolbar.
+</p>
+
+## Membaca dan menganalisa data hasil Capture
+
+<p>
+  Data hasil 'tangkapan' Wireshark ditampilkan pada tiga (3) bagian jendela:
+</p>
+<img src={useLazyImage(minggu12_3)} />
+<ol>
+  <li>
+    jendela <i>packet list</i>
+  </li>
+  <p>
+    Pada jendela ini, hasil tangkapan paket data disusun di dalam format tabel.
+    Setiap paket yang diterima ditampilkan dalam baris/<i>row</i> sesuai nomor
+    korespondennya secara urut. Semakin lama proses <i>capture</i>, maka akan
+    semakin banyak baris/<i>row</i> data paket yang 'tertangkap'. Setiap baris
+    akan memuat unit-unit informasi paket di antaranya sumber paket (
+    <i>source</i>), destinasi (<i>destination</i>), protokol (<i>protocol</i>),{" "}
+    <i>length</i> (panjang paket data dalam satuan
+    <i>bytes</i>), dan info.
+  </p>
+  <li>
+    jendela <i>packet details</i>
+  </li>
+  <p>
+    Jendela yang ini terletak di bagian tengah, fungsinya untuk menyajikan
+    substansi informasi protokol-protokol dari baris paket data yang dipilih
+    pada jendela packet list, data tersebut disajikan secara horizontal dan
+    berhirarki.
+  </p>
+  <li>
+    jendela <i>packet bytes</i>
+  </li>
+  <p>
+    Pada jendela yang paling bawah ini ditampilkan data raw dari paket data yang
+    diseleksi pada jendela paling atas (<i>packet list</i>). Data raw tersebut
+    tampil dalam format hexadesimal (<b>hex</b>). Data hex tersebut memuat 16
+    hexadecimal bytes dan 16 ASCII bytes.
+  </p>
+  <li>menggunakan Wireshark filter</li>
+  <p>
+    <i>Capture filter</i> letaknya di atas jendela <i>packet list</i>, disitu
+    user dapat menginputkan '<i>query</i>' untuk menyaring paket-paket data yang
+    memenuhi kriteria tertentu. Filter juga dapat diaplikasikan terhadap hasil
+    rekaman <i>capture</i> yang tersimpan. Contohnya, bila Anda ingin melihat
+    paket data <b>TCP</b>, maka ketikkan <b>tcp</b>.
+  </p>
+</ol>
+
+<Referensi>
+  <p style="text-align: start;">
+    <a href="https://hot.liputan6.com/read/4136467/6-fungsi-aplikasi-wireshark-pengertian-dan-cara-kerjanya">
+      https://hot.liputan6.com/read/4136467/6-fungsi-aplikasi-wireshark-pengertian-dan-cara-kerjanya
+    </a>
+    <a href="https://www.nesabamedia.com/pengertian-wireshark/">
+      https://www.nesabamedia.com/pengertian-wireshark/
+    </a>
+    <a href="https://beritateknologi.id/mengenal-wireshark-dan-cara-menjalankannya/">
+      https://beritateknologi.id/mengenal-wireshark-dan-cara-menjalankannya/
+    </a>
+  </p>
+</Referensi>
